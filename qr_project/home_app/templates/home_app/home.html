@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block link %}
+<link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Jura:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'home_app/style.css' %}">
+{% endblock %}
+
+{% block title%}
+Головна сторінка
+{% endblock %}
+{% block content %}
+    <div class =  "Screen">
+
+        <div class = "hat">
+            <h1 class = "h1Generate">Генератор <span class = "spanQR">QR</span>-кодів</h1>
+            <div class = "urls">
+                <div class = "mainUrl">
+                    <a href = "" class = "mainPage">Головна</a>
+                </div>
+                <a href=""class = "registrationPage">Реєстрація</a>
+                <a href=""class = "authorizationPage">Авторизація</a>
+                <a href="" class = "MyQRCodesPage" >Мої QR-коди</a>
+            </div>
+        </div>
+        <div class = "subscribe">
+
+            <div class = "subscribeFree">
+                <h1 class = "h1Free">Free</h1>
+                <h1 class = "descritpionFree">Безкоштовно Один QR-код на 6 місяців</h1>
+            </div>
+
+            <div class = "lineBetweenFreeAndStandart"></div>
+            
+            <div class = "subscribeStandart">
+                <h1 class = "h1Standart">Standart</h1>
+                <h1 class = "descriptionStandart">2$ на місяць 10 кастомізованих <br>QR-кодів</h1>
+            </div>
+
+            <div class = "lineBetweenStandartAndPro"></div>
+
+            <div class = "subscribePro">
+                <h1 class = "h1Pro">Pro</h1>
+                <h1 class = "descriptionPro">10$ на місяць До 100 <br>QR-кодів</h1>
+            </div>
+            
+        </div>
+        <div class = "generateButton">
+            <div class = "bgGenerateButton">
+                <h1 class = "h1GenerateButton">Згенерувати QR-код</h1>
+            </div>
+        </div>
+        <div class = "contacts">
+            <div class = "allIcons">
+                <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
+                <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">
+                <img class = "imageCall" src="{% static 'images/callIcon.png' %}" alt="">
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
