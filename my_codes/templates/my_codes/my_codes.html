@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'my_codes_app/my_codes.css' %}">
+{% endblock %}
+
+{% block title %}
+    Мої QR-коди
+{% endblock %}
+
+
+
+{% block content %}
+    <div class = "Screen">
+        <div class = "hat"; style="height: 136px; ">
+            <h1 class = "h1Generate">Мої <span class = "spanQR">QR</span>-коди</h1>
+            <div class = "urls">
+                <div class = "mainUrl">
+                    <a href = "" class = "mainPage">Головна</a>
+                </div>
+                <a href="/"class = "name">Ім'я</a>
+                <a href="qrgenerate/" class = "MyQRCodesPage" >Мої QR-коди</a>
+                <a href="" class = "Exit-acaunt">Вийти з акаунту</a>
+            </div>
+        </div>
+        <main>
+            <div class="codes">
+                
+            </div>
+            <div class = "contacts">
+                <div class = "allIcons">
+                    <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
+                    <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">
+                    <img class = "imageCall" src="{% static 'images/callIcon.png' %}" alt="">
+                </div>
+            </div>
+        </main>
+    </div>
+{% endblock %}

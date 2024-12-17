@@ -1,0 +1,88 @@
+*{
+    margin:0px;
+    padding: 0px;
+}
+.Screen{
+    height: 100%;
+    width: 100%;
+    background-image: url('/../static/images/bgForGenerate.png');
+    background-color: #EDF4FC;
+    background-size: 100% 100%;
+    gap: 15px;
+}
+.hat{
+    width: 100%;
+    height: 136px;
+    display: flex;
+    flex-direction: row;
+    gap: 180px;
+    flex-wrap: wrap;
+
+}
+.urls{
+    width: 649px;
+    height: 58px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    padding-top: 50px;
+}
+.h1Generate{
+    width: 428px;
+    font-size: 64px;
+    height: 63.07px;
+    padding-left: 200px;
+    padding-top: 50px;
+}
+.spanQR{
+    color: #FF9334;
+}
+a{
+    text-decoration: none;
+    font-family: 'Arimo', sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+}
+.MyQRCodesPage{
+    display: flex;
+    flex-direction: row;
+    width: 148px;
+    height: 39px;
+    background-color: rgba(255, 147, 52, 0.62);
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    border: black solid 1px;
+}
+.mainPage{
+    color: black;
+    opacity: 100%;
+}
+.codes{
+    width: 100%;
+    height: 506px;
+}
+
+.contacts{
+    width: 100%;
+    height: 79px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; 
+    padding-top: 5px;
+}
+.allIcons{
+    width: 212px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 46px;
+    padding-left: 40px;
+    padding-top: 26px;
+}
+.imageTelegram{
+    width: 40px;
+    height: 40px;
+}

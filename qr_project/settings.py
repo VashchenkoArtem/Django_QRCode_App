@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home_app',
-    'qrgenerate_app'
+    'qrgenerate_app',
+    'my_codes',
+    'contacts_app'
 ]
 
 MIDDLEWARE = [
@@ -123,3 +125,5 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [BASE_DIR / "my_codes/static", BASE_DIR / "home_app/static", BASE_DIR / "qrgenerate_app/static", BASE_DIR / "contacts_app/static"]

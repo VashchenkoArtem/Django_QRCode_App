@@ -13,44 +13,44 @@
 {% endblock %}
 {% block content%}
     <div class = "screen">
-        <div class = "hat">
-            <h1 class = "h1Generate">Генерування <span class = "spanQR">QR</span>-кода</h1>
-            <div class = "urls">
-                <div class = "mainUrl">
-                    <a href = "/" class = "mainPage">Головна</a>
-                </div>
-                <a href=""class = "registrationPage">Реєстрація</a>
-                <a href=""class = "authorizationPage">Авторизація</a>
-                <a href="" class = "MyQRCodesPage" >Мої QR-коди</a>
-            </div>
-        </div>
-        <div class="main-form">
-            <div class="form">
-                <div class="form-form"> 
-                        <label class="qr-name">Назва QR-кода</label>
-                        <input class="qr-name-example" type ="text">
-                        <h5 class="qr-under">Наприклад: Figma QR</h5>
-                </div>
-                <div class="size-form">
-                        <label class="size">Розмір</label>
-                        <input class="size-example" type ="text">
-                </div>
-                <div class="url-form">
-                        <label class="url">Посилання</label>
-                        <input class="url-example" type ="text">
-                        <h5 class="url-example-text">Наприклад: https://www.figma.com/</h5>
-                </div>
-                <div class="cr-qr-form">    
-                        <h3 class="create-qr">Створити QR</h3>
+            <div class = "hat">
+                <h1 class = "h1Generate">Генерування <span class = "spanQR"> QR</span>-кода</h1>
+                <div class = "urls">
+                    <div class = "mainUrl">
+                        <a href = "" class = "mainPage">Головна</a>
+                    </div>
+                    <a href="/"class = "name">Ім'я</a>
+                    <a href="qrgenerate/" class = "MyQRCodesPage" >Мої QR-коди</a>
+                    <a href="" class = "Exit-acaunt">Вийти з акаунту</a>
                 </div>
             </div>
-        </div>
-        <div class = "contacts">
-            <div class = "allIcons">
-                <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
-                <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">
-                <img class = "imageCall" src="{% static 'images/callIcon.png' %}" alt="">
+            <div class="main-form">
+                <div class="form">
+                    <div class="form-form"> 
+                            <label class="qr-name">Назва QR-кода</label>
+                            <input class="qr-name-example" type ="text">
+                            <h5 class="qr-under">Наприклад: Figma QR</h5>
+                    </div>
+                    <div class="size-form">
+                            <label class="size">Розмір</label>
+                            <input class="size-example" type ="text">
+                    </div>
+                    <div class="url-form">
+                            <label class="url">Посилання</label>
+                            <input class="url-example" type ="text">
+                            <h5 class="url-example-text">Наприклад: https://www.figma.com/</h5>
+                    </div>
+                    <div class="cr-qr-form">    
+                            <h3 class="create-qr">Створити QR</h3>
+                    </div>
+                </div>
             </div>
-        </div>
+            <div class = "contacts">
+                <div class = "allIcons">
+                    <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
+                    <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">
+                    <img class = "imageCall" src="{% static 'images/callIcon.png' %}" alt="">
+                </div>
+            </div>
     </div>
 {% endblock %}
