@@ -40,7 +40,13 @@ INSTALLED_APPS = [
     'home_app',
     'qrgenerate_app',
     'my_codes',
-    'contacts_app'
+    'contacts_app',
+    'registration1',
+    'registration_2',
+    'registration3',
+    'authorithation3',
+    'authorithation1',
+    'authorithation2'
 ]
 
 MIDDLEWARE = [
@@ -126,4 +132,14 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_DIRS = [BASE_DIR / "my_codes/static", BASE_DIR / "home_app/static", BASE_DIR / "qrgenerate_app/static", BASE_DIR / "contacts_app/static"]
+STATICFILES_DIRS = [BASE_DIR / "my_codes/static", 
+                    BASE_DIR / "home_app/static", 
+                    BASE_DIR / "qrgenerate_app/static", 
+                    BASE_DIR / "contacts_app/static",
+                    BASE_DIR / "registration3/static",
+                    BASE_DIR / "registration_2/static",
+                    BASE_DIR / "registration1/static",
+                    BASE_DIR / "authorithation3/static",
+                    BASE_DIR / "authorithation1/static",
+                    BASE_DIR / "authorithation2/static"
+                    ]

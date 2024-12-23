@@ -18,11 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 from home_app.views import render_home_app
 from contacts_app.views import render_contacts
-
+from authorithation3.views import render_authorithation3
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", render_home_app),
     path('codes/', include('my_codes.urls')),
-    path('contacts/', render_contacts)
+    path('contacts/', render_contacts),
+    path('registration/', include('registration1.urls')),
+    path('authorithation/', include('authorithation3.urls'))
 ]

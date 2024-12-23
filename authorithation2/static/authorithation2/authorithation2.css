@@ -13,9 +13,7 @@
     background-size: 100% 100%;
     display: flex;
     flex-direction: column;
-    gap: 95px;
 }
-
 
 .hat{
     width: 100%;
@@ -69,176 +67,286 @@ a{
     color: #FF9334;
 }
 
+/* Форма */
 
-
-/* Посилання в шапці */
-
-.main{
-    width: 86px;
-    height: 39px;
-
-    font-family: 'Josefin Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 20px;
+.emailImgFrame{
+    width: 92px;
+    height: 72px;
     display: flex;
+    flex-direction: c;
+    justify-content: center;
     align-items: center;
-
-    color: #000000;
-
-    text-decoration: none;
-
-
-    /* Inside auto layout */
-    flex: none;
-    flex-grow: 0;
 }
 
-.name{
+.emailImg{
+    width: 92px;
+    height: 72px;
+}
+
+.authorithation-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 528px;
+}
+
+.authorithation-frame{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    
+    width: 418px;
+    height: 492px;
+    
+    background: rgba(255, 255, 255, 0.66);
+    border-radius: 30px;
+}
+.steps{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 254px;
+    height: 40px;
+    padding-top: 40px;
+}
+
+.step-1{
     width: 40px;
-    height: 39px;
-
-    font-family: 'Josefin Slab';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-
-    color: #000000;
-
-    text-decoration: none;
-
-
-    /* Inside auto layout */
+    height: 40px;
+    border-radius: 20px;
     flex: none;
+    order: 0;
     flex-grow: 0;
+    background-image: url('/../static/images/step.png');
 }
 
-.mycodes-frame{
+.step-1-frame{
     box-sizing: border-box;
 
     /* Auto layout */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1px 9px;
+    padding: 11px 17px;
     gap: 10px;
 
-    width: 148px;
-    height: 38px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
 
-    background: rgba(255, 147, 52, 0.62);
-    border: 1px solid #000000;
-    border-radius: 30px;
+    background-color: #57EE7F;
 
-    /* Inside auto layout */
-    flex: none;
-    flex-grow: 0;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 20px;
 }
 
-.my-codes{
-    width: 130px;
-    height: 20px;
-
-    font-family: 'Josefin Slab';
+.step-1-img{
+    width: 10px;
+    height: 27px;
+    
+    font-family: 'Jost';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 20px;
-    line-height: 20px;
-    /* identical to box height */
-
-    color: #000000;
-
-    text-decoration: none;
-
-
+    line-height: 29px;
+    
+   
+    
+    
     /* Inside auto layout */
     flex: none;
     order: 0;
     flex-grow: 0;
 }
 
-.exit-account{
-    width: 163px;
-    height: 39px;
+.line-1{
+    width: 68px;
+    height: 0px;
 
-    font-family: 'Josefin Slab';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 20px;
+    border: 1px solid #57EE7F;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.step-2{
+    /* Auto layout */
     display: flex;
+    flex-direction: row;
     align-items: center;
+    padding: 0px;
+    gap: 10px;
 
+    width: 40px;
+    height: 40px;
+
+    background: #E8E8E8;
+    border-radius: 20px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+.step-2-frame{
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 14px;
+    gap: 10px;
+    
+    width: 40px;
+    height: 40px;
+    
+    border: 1px solid #57EE7F;
+    border-radius: 20px;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;  
+}
+
+.step-2-text{
+    width: 12px;
+    height: 29px;
+    
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    color: #57EE7F;
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.line-2{
+    width: 68px;
+    height: 0px;
+    
+    border: 1px solid #57EE7F;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 3;
+    flex-grow: 0; 
+}
+
+.step-3{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    
+    width: 40px;
+    height: 40px;
+    
+    background: #E8E8E8;
+    border-radius: 20px;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 4;
+    flex-grow: 0;
+}
+
+.step-3-frame{
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 14px;
+    gap: 10px;
+    
+    width: 40px;
+    height: 40px;
+    
+    border: 1px solid #57EE7F;
+    border-radius: 20px;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.step-3-text{
+    width: 11px;
+    height: 29px;
+    
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    color: #57EE7F;
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.info-text{
+    width: 382px;
+    height: 35px;
+    
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 29px;
+    text-align: center;
     color: #000000;
+    line-height: 14px;
+    color: rgba(0, 0, 0, 0.27);
+}
 
-    text-decoration: none;
-
-
+.email-form-frame{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    
+    width: 287px;
+    height: 67px;
+    
+    
     /* Inside auto layout */
     flex: none;
     order: 3;
     flex-grow: 0;
 }
 
-/* Форми для створення коду */
-
-.main-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-right: 200px;
-    width: 100%;
-    height: 286px;
-}
-
-.form{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    padding: 20px;
-    margin-left: 180px;
-    gap: 29px;
-
-
-
-    width: 451px;
-    height: 292px;
-
-    background-color: rgba(255, 255, 255, 0.66);
-    border-radius: 30px;
-
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-}
-
-.form-form{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-
-    width: 191px;
-    height: 70px;
-
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-}
-
-.qr-name{
-    width: 191px;
+.text-name{
+    width: 287px;
     height: 29px;
     
     font-family: 'Jost';
@@ -257,27 +365,31 @@ a{
     align-self: stretch;
     flex-grow: 0;
 }
-
-.qr-name-example{
+.frame{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.name-form{
     box-sizing: border-box;
 
-    width: 191px;
+    width: 287px;
     height: 34px;
     
     background: #F9FBFE;
     border: 1px solid #C4C4C4;
     border-radius: 10px;
     
-
+    /* Inside auto layout */
     flex: none;
     order: 1;
     align-self: stretch;
     flex-grow: 0;
 }
 
-.qr-under{
-    width: 191px;
-    height: 7px;
+.under-name{
+    width: 207px;
+    height: 13px;
     
     font-family: 'Jost';
     font-style: normal;
@@ -288,171 +400,39 @@ a{
     color: rgba(0, 0, 0, 0.21);
     
     
-    flex: none;
-    order: 2;
-    align-self: stretch;
-    flex-grow: 0;
-}
-
-.size-form{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-
-    width: 191px;
-    height: 63px;
-
-
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-}
-
-.size{
-    width: 191px;
-    height: 29px;
-    
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 29px;
-    /* identical to box height */
-    
-    color: rgba(0, 0, 0, 0.5);
-    
-    
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
-}
-
-.size-example{
-    box-sizing: border-box;
-
-    width: 191px;
-    height: 34px;
-    
-    background: #F9FBFE;
-    border: 1px solid #C4C4C4;
-    border-radius: 10px;
-    
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
-}
-
-.url-form{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-
-    width: 411px;
-    height: 70px;
-
-
     /* Inside auto layout */
     flex: none;
     order: 2;
-    flex-grow: 0;
-}
-
-.url{
-    width: 411px;
-    height: 29px;
-
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 29px;
-
-    color: rgba(0, 0, 0, 0.5);
-
-
-    flex: none;
-    order: 0;
     align-self: stretch;
     flex-grow: 0;
 }
 
-.url-example{
+.under-button-frame{
     box-sizing: border-box;
-
-    width: 411px;
-    height: 34px;
-    
-    background: #F9FBFE;
-    border: 1px solid #C4C4C4;
-    border-radius: 10px;
-    
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
-}
-
-.url-example-text{
-    width: 411px;
-    height: 7px;
-
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 14px;
-
-    color: rgba(0, 0, 0, 0.21);
-
-
-    flex: none;
-    order: 2;
-    align-self: stretch;
-    flex-grow: 0;
-}
-
-.cr-qr-form{
-    box-sizing: border-box;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 12px 9px;
-    gap: 40px;
-
-    width: 236px;
-    height: 54px;
-
+    padding: 21px 64px;
+    gap: 10px;
+    width: 287px;
+    height: 57px;
     background: #FFFFFF;
     border: 1px solid #C4C4C4;
-    border-radius: 15px;
-
-    /* Inside auto layout */
+    border-radius: 10px;
     flex: none;
-    order: 3;
+    order: 5;
     flex-grow: 0;
 }
 
-.create-qr{
-    width: 116px;
-    height: 24px;
-
+.text-button{
+    height: 22px;
     font-family: 'Jost';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 20px;
-    line-height: 29px;
-
-    color: #57EE7F;
+    line-height: 22px;
+    color: #6CE18B;
     flex: none;
     order: 0;
     flex-grow: 0;

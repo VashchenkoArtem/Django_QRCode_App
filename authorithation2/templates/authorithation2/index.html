@@ -1,0 +1,63 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'authorithation2/authorithation2.css' %}">
+{% endblock %}
+{% block content %}
+    <div class = "Screen">
+        <div class = "hat"; style="height: 136px; gap:119px">
+            <h1 class = "h1Generate">Авторизація</h1>
+            <div class = "urls">
+                <div class = "mainUrl">
+                    <a href = "" class = "mainPage">Головна</a>
+                </div>
+                <a href=""class = "">Реєстрація</a>
+                <a href=""class = "myQRCodesPage">Авторизація</a>
+                <a href="">Мої QR-коди</a>
+            </div>
+        </div>
+        <div class="authorithation-form">
+            <div class="authorithation-frame">
+                <div class="steps">
+                    <div class="step-1">
+
+                    </div>
+                    <div class="line-1"></div>
+                    <div class="step-2">
+                        <div class="step-2-frame">
+                            <h3 class="step-2-text">2</h3>
+                        </div>
+                    </div>
+                    <div class="line-2"></div>
+                    <div class="step-3">
+                        <div class="step-3-frame">
+                            <h3 class="step-3-text">3</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="emailImgFrame">
+                    <img class="emailImg" src="{% static 'images/emailicon.png' %}" alt="">
+                </div>
+                <h1 class="info-text">На вашу пошту надійшло повідомлення! <br>Будь ласка введіть код для підтвердження</h1>
+                <form method = "POST" class = "frame">
+                    <div class="email-form-frame">
+                        <label class="text-name">Код з пошти</label>
+                        <input class="name-form" type="text">
+                        <h5 class="under-name">Наприклад: 123456</h5>
+                    </div>
+                    <button class="under-button-frame" type="submit">
+                        <a class="text-button" href="/project/authorithation-2/authorithation.html">Ввійти в акаунт</a>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class = "contacts">
+            <div class = "allIcons">
+                <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
+                <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">
+                <img class = "imageCall" src="{% static 'images/callIcon.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+{% endblock %}

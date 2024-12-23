@@ -1,0 +1,348 @@
+*{
+    font-family: 'Jost', sans-serif;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.Screen{
+    height: 100%;
+    width: 100%;
+    background-image: url('/../static/images/bgForGenerate.png');
+    background-color: #EDF4FC;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.hat{
+    width: 100%;
+    height: 170px;
+    display: flex;
+    flex-direction: row;
+    gap: 43px;
+}
+.h1Generate{
+    width: 390px;
+    font-size: 64px;
+    line-height: 70px;
+    padding-left: 200px;
+    padding-top: 50px;
+}
+.spanQR{
+    color: #FF9334;
+}
+.urls{
+    width: 649px;
+    height: 58px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    padding-top: 50px;
+}
+a{
+    text-decoration: none;
+    font-family: 'Arimo', sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+}
+.MyQRCodesPage{
+    display: flex;
+    flex-direction: row;
+    width: 148px;
+    height: 39px;
+    background-color: rgba(255, 147, 52, 0.62);
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    border: black solid 1px;
+}
+.mainPage{
+    color: black;
+    opacity: 100%;
+}
+.spanQR{
+    color: #FF9334;
+}
+
+/* Форма авторизації */
+
+.registration-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 528px;
+}
+
+.registration-frame{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    
+    width: 418px;
+    height: 492px;
+    
+    background: rgba(255, 255, 255, 0.66);
+    border-radius: 30px;
+
+}
+.steps{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 254px;
+    height: 40px;
+    padding-top: 40px;
+}
+
+.step-1{
+    width: 40px;
+    height: 40px;
+    background: #E8E8E8;
+    border-radius: 20px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.step-1-frame{
+    box-sizing: border-box;
+
+    background-image: url('/../static/images/step.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    position: absolute;
+    width: 40px;
+    height: 40px;
+
+    border-radius: 20px;
+}
+
+
+.line-1{
+    width: 68px;
+    height: 0px;
+
+    border: 1px solid #57EE7F;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.step-2{
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+
+    width: 40px;
+    height: 40px;
+
+    background: #E8E8E8;
+    border-radius: 20px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+.step-2-frame{
+    box-sizing: border-box;
+
+    background-image: url('/../static/images/step.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    position: absolute;
+    width: 40px;
+    height: 40px;
+
+    border-radius: 20px;
+}
+
+.step-2-text{
+    width: 12px;
+    height: 29px;
+    
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    color: #57EE7F;
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.line-2{
+    width: 68px;
+    height: 0px;
+    
+    border: 1px solid #57EE7F;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 3;
+    flex-grow: 0; 
+}
+
+.step-3{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    
+    width: 40px;
+    height: 40px;
+    
+    background: #E8E8E8;
+    border-radius: 20px;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 4;
+    flex-grow: 0;
+}
+
+.step-3-frame{
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 14px;
+    gap: 10px;
+    
+    width: 40px;
+    height: 40px;
+    
+    border: 1px solid #57EE7F;
+    border-radius: 20px;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.step-3-text{
+    width: 11px;
+    height: 29px;
+    
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    color: #57EE7F;
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.frame-succes{
+    width: 382px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.h1{
+    width: 208px;
+    height: 42px;
+    font-size: 14px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5)
+}
+
+
+.under-button-frame{
+    
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 21px 64px;
+    gap: 10px;
+    width: 287px;
+    height: 57px;
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    border-radius: 10px;
+    flex: none;
+    order: 5;
+    flex-grow: 0;
+    margin-left: 45px;
+    
+}
+
+.text-button{
+    height: 22px;
+    
+    font-family: 'Jost';
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 22px;
+    color: #6CE18B;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.contacts{
+    width: 100%;
+    height: 79px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.allIcons{
+    width: 212px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 46px;
+    padding-left: 40px;
+    padding-top: 27px;
+}
+
+.imageTelegram{
+    width: 40px;
+    height: 40px;
+
+}

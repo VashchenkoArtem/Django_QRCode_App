@@ -24,9 +24,8 @@
     height: 230px;
     display: flex;
     flex-direction: row;
-
     gap: 180px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 .h1Generate{
     width: 390px;
@@ -189,7 +188,6 @@ a{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column; 
-    padding-top: 51px;
 }
 .allIcons{
     width: 212px;
