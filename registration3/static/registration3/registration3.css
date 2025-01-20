@@ -143,76 +143,9 @@ a{
     flex-grow: 0;
 }
 
+
+
 .step-2{
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    gap: 10px;
-
-    width: 40px;
-    height: 40px;
-
-    background: #E8E8E8;
-    border-radius: 20px;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 2;
-    flex-grow: 0;
-}
-
-.step-2-frame{
-    box-sizing: border-box;
-
-    background-image: url('/../static/images/step.png');
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-
-    position: absolute;
-    width: 40px;
-    height: 40px;
-
-    border-radius: 20px;
-}
-
-.step-2-text{
-    width: 12px;
-    height: 29px;
-    
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 29px;
-    /* identical to box height */
-    
-    color: #57EE7F;
-    
-    
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-}
-
-.line-2{
-    width: 68px;
-    height: 0px;
-    
-    border: 1px solid #57EE7F;
-    
-    /* Inside auto layout */
-    flex: none;
-    order: 3;
-    flex-grow: 0; 
-}
-
-.step-3{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -224,14 +157,12 @@ a{
     
     background: #E8E8E8;
     border-radius: 20px;
-    
-    /* Inside auto layout */
     flex: none;
     order: 4;
     flex-grow: 0;
 }
 
-.step-3-frame{
+.step-2-frame{
     box-sizing: border-box;
 
     /* Auto layout */
@@ -254,13 +185,13 @@ a{
     flex-grow: 0;
 }
 
-.step-3-text{
+.step-2-text{
     width: 11px;
     height: 29px;
     
     font-family: 'Jost';
     font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 20px;
     line-height: 29px;
     /* identical to box height */
@@ -286,7 +217,7 @@ a{
     height: 42px;
     font-size: 14px;
     text-align: center;
-    color: rgba(0, 0, 0, 0.5)
+    color: rgba(0, 0, 0, 0,2)
 }
 
 
@@ -308,7 +239,16 @@ a{
     order: 5;
     flex-grow: 0;
     margin-left: 45px;
+    height: 22px;
     
+    font-family: 'Jost';
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 22px;
+    color: #6CE18B;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
 
 .text-button{
@@ -316,7 +256,7 @@ a{
     
     font-family: 'Jost';
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
     line-height: 22px;
     color: #6CE18B;
     flex: none;

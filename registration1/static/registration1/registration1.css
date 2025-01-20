@@ -44,7 +44,6 @@
 }
 a{
     text-decoration: none;
-    font-family: 'Arimo', sans-serif;
     font-weight: bold;
     color: black;
     font-size: 20px;
@@ -138,8 +137,8 @@ a{
     
     font-family: 'Jost';
     font-style: normal;
-    font-weight: 400;
     font-size: 20px;
+    font-weight: bold;
     line-height: 29px;
     
     color: #57EE7F;
@@ -174,7 +173,7 @@ a{
     width: 40px;
     height: 40px;
 
-    background: #E8E8E8;
+    background: white;
     border-radius: 20px;
 
     /* Inside auto layout */
@@ -248,7 +247,7 @@ a{
     width: 40px;
     height: 40px;
     
-    background: #E8E8E8;
+    background: white;
     border-radius: 20px;
     
     /* Inside auto layout */
@@ -307,7 +306,7 @@ a{
     font-family: 'Jost';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 30px;
     line-height: 29px;
     text-align: center;
     color: #000000;
@@ -334,7 +333,7 @@ a{
     line-height: 29px;
     /* identical to box height */
     
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.);
     
     
     /* Inside auto layout */
@@ -428,7 +427,6 @@ a{
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
     padding: 21px 64px;
     gap: 10px;
@@ -440,23 +438,40 @@ a{
     flex: none;
     order: 5;
     flex-grow: 0;
-}
-
-.text-button{
-    width: 74px;
+    text-align: center;
     height: 22px;
-    
     font-family: 'Jost';
     font-style: normal;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 30px;
     line-height: 22px;
     color: #6CE18B;
     flex: none;
     order: 0;
     flex-grow: 0;
+    padding-left: 72px;
 }
 
+.text-button{
+    height: 22px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 22px;
+    color: #6CE18B;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    padding-left: 10px;
+
+}
+
+.error{
+    font-size: 15px;
+    width: 287px;
+    text-align: center;
+}
 .contacts{
     width: 100%;
     height: 79px;

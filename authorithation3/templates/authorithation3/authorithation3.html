@@ -22,11 +22,13 @@
                 <div class="steps">
                     <div class="step-1">
                         <div class="step-1-frame">
+                            <h3 class="step-1-text"></h3>
                         </div>
                     </div>
                     <div class="line-1"></div>
                     <div class="step-2">
                         <div class="step-2-frame">
+                            <h3 class="step-2-text">2</h3>
                         </div>
                     </div>
                     <div class="line-2"></div>
@@ -38,17 +40,16 @@
                 </div>
                 <img src="{% static 'images/succesregistration.png' %}" alt="">
                 <form method = "POST">
+                    {% csrf_token %}
                     <div class = "frame-succes">
                         <h1 class = 'h1'>Вітаємо! <br>Ви успішно авторизувалися!</h1>
                     </div>
 
-                    <button class="under-button-frame" type="submit">
-                        <a class="text-button" href="/project/authorithation-2/authorithation.html">На головну</a>
-                    </button>
+                    <button class="under-button-frame" type="submit">На головну</button>
                 </form>
             </div>
         </div>
-        <div class = "contacts">
+        <div class = "contacts"  style="padding-top: 51px;">
             <div class = "allIcons">
                 <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
                 <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">

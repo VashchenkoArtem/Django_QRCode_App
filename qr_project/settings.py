@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'registration3',
     'authorithation3',
     'authorithation1',
-    'authorithation2'
+    'authorithation2',
+    'subscribe'
 ]
 
 MIDDLEWARE = [
@@ -141,5 +142,14 @@ STATICFILES_DIRS = [BASE_DIR / "my_codes/static",
                     BASE_DIR / "registration1/static",
                     BASE_DIR / "authorithation3/static",
                     BASE_DIR / "authorithation1/static",
-                    BASE_DIR / "authorithation2/static"
+                    BASE_DIR / "authorithation2/static",
+                    BASE_DIR / "subscribe/static"
                     ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False  
+EMAIL_HOST_USER = 'qrprojectdjangoteam2@gmail.com'
+EMAIL_HOST_PASSWORD = 'mplb shyv wxva jhuw'  

@@ -12,9 +12,9 @@
                 <div class = "mainUrl">
                     <a href = "" class = "mainPage">Головна</a>
                 </div>
-                <a href=""class = "myQRCodesPage">Реєстрація</a>
-                <a href=""class = "">Авторизація</a>
-                <a href="">Мої QR-коди</a>
+                <a href="/"class = "name">{{request.user.username}}</a>
+                <a href="qrgenerate/" class = "MyQRCodesPage" >Реєстрація</a>
+                <a href="" class = "Exit-acaunt">Вийти з акаунту</a>
             </div>
         </div>
         <div class="registration-form">
@@ -40,19 +40,18 @@
                     <img class="emailImg" src="{% static 'images/emailicon.png' %}" alt="">
                 </div>
                 <h1 class="info-text">На вашу пошту надійшло повідомлення! <br>Будь ласка введіть код для підтвердження</h1>
-                <form method = "POST" class = "frame">
+                <form method = "post" >
+                    {% csrf_token %}
                     <div class="email-form-frame">
                         <label class="text-name">Код з пошти</label>
-                        <input class="name-form" type="text">
+                        <input class="name-form" type="text" name = "code" required>
                         <h5 class="under-name">Наприклад: 123456</h5>
                     </div>
-                    <button class="under-button-frame" type="submit">
-                        <a class="text-button" href="/project/authorithation-2/authorithation.html">Створити аккаунт</a>
-                    </button>
+                    <button class="under-button-frame" type="submit">Надіслати</button>
                 </form>
             </div>
         </div>
-        <div class = "contacts">
+        <div class = "contacts" style="padding-top: 51px;">
             <div class = "allIcons">
                 <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
                 <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">

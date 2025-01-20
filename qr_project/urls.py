@@ -19,6 +19,7 @@ from django.urls import path, include
 from home_app.views import render_home_app
 from contacts_app.views import render_contacts
 from authorithation3.views import render_authorithation3
+from subscribe.views import render_subscribe
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +27,6 @@ urlpatterns = [
     path('codes/', include('my_codes.urls')),
     path('contacts/', render_contacts),
     path('registration/', include('registration1.urls')),
-    path('authorithation/', include('authorithation3.urls'))
+    path('authorithation/', include('authorithation3.urls')),
+    path('subscribe/', render_subscribe)
 ]

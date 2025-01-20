@@ -91,6 +91,9 @@ a{
 .h1Free{
     font-size: 60px;
     font-family: 'Jura', sans-serif;
+    text-decoration:underline;
+    border: 0px black solid;
+    background-color:#EDF4FC
 }
 .descritpionFree{
     font-size: 24px;
@@ -158,12 +161,13 @@ a{
 }
 
 .generateButton{
-    width: 100%;
+    width: 83%;
     height: 79px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 .bgGenerateButton{
     width: 302px;

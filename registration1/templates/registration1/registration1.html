@@ -31,38 +31,32 @@
                             <h3 class="step-2-text">2</h3>
                         </div>
                     </div>
-                    <div class="line-2"></div>
-                    <div class="step-3">
-                        <div class="step-3-frame">
-                            <h3 class="step-3-text">3</h3>
-                        </div>
-                    </div>
                 </div>
                 <h1 class="info-text">Інформація про вас</h1>
-                <form method = "POST">
 
+                <form method = "post">
+                    {% csrf_token %}
                     <div class="name-form-frame">
                         <label class="text-name">Ім'я</label>
-                        <input class="name-form" type="text">
+                        <input class="name-form" type="text" name = "name" required>
                         <h5 class="under-name">Наприклад: Artem</h5>
                     </div>
                     <div class="email-form-frame">
                         <label class="text-name">Пошта</label>
-                        <input class="name-form" type="text">
+                        <input class="name-form" type="text" name="email" required>
                         <h5 class="under-name">Наприклад: example123@gmail.com</h5>
                     </div>
                     <div class="password-form-frame">
                         <label class="text-name">Пароль</label>
-                        <input class="name-form" type="password">
+                        <input class="name-form" type="password" name="password" required>
                         <h5 class="under-name">Не менше 8 символів</h5>
                     </div>
-                    <button class="under-button-frame" type="submit">
-                        <a class="text-button" href="/project/authorithation-2/authorithation.html">Надіслати</a>
-                    </button>
+                    <h1 class = "error">{{error}}</h1>
+                    <button class="under-button-frame" type="submit">Надіслати</button>
                 </form>
             </div>
         </div>
-        <div class = "contacts">
+        <div class = "contacts" style="padding-top: 51px;">
             <div class = "allIcons">
                 <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
                 <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">

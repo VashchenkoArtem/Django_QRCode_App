@@ -137,8 +137,7 @@ a{
     height: 27px;
     
     font-family: 'Jost';
-    font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 20px;
     line-height: 29px;
     
@@ -174,7 +173,7 @@ a{
     width: 40px;
     height: 40px;
 
-    background: #E8E8E8;
+    background: white;
     border-radius: 20px;
 
     /* Inside auto layout */
@@ -248,7 +247,7 @@ a{
     width: 40px;
     height: 40px;
     
-    background: #E8E8E8;
+    background: white;
     border-radius: 20px;
     
     /* Inside auto layout */
@@ -307,7 +306,7 @@ a{
     font-family: 'Jost';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 30px;
     line-height: 29px;
     text-align: center;
     color: #000000;
@@ -334,7 +333,7 @@ a{
     line-height: 29px;
     /* identical to box height */
     
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0);
     
     
     /* Inside auto layout */
@@ -425,6 +424,7 @@ a{
 }
 
 .under-button-frame{
+    margin-top: 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -440,16 +440,11 @@ a{
     flex: none;
     order: 5;
     flex-grow: 0;
-}
-
-.text-button{
-    width: 74px;
     height: 22px;
-    
     font-family: 'Jost';
     font-style: normal;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 30px;
     line-height: 22px;
     color: #6CE18B;
     flex: none;
@@ -457,12 +452,21 @@ a{
     flex-grow: 0;
 }
 
+
 .contacts{
     width: 100%;
     height: 79px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+}
+.text-name{
+    color: black;
+}
+.error{
+    font-size: 15px;
+    width: 287px;
+    text-align: center;
 }
 .allIcons{
     width: 212px;

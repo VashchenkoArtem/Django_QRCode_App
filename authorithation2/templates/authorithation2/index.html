@@ -21,7 +21,9 @@
             <div class="authorithation-frame">
                 <div class="steps">
                     <div class="step-1">
-
+                        <div class="step-1-frame">
+                            <h3 class="step-1-text"></h3>
+                        </div>
                     </div>
                     <div class="line-1"></div>
                     <div class="step-2">
@@ -40,19 +42,19 @@
                     <img class="emailImg" src="{% static 'images/emailicon.png' %}" alt="">
                 </div>
                 <h1 class="info-text">На вашу пошту надійшло повідомлення! <br>Будь ласка введіть код для підтвердження</h1>
-                <form method = "POST" class = "frame">
+                <form method = "post" class = "frame">
+                    {% csrf_token %}
                     <div class="email-form-frame">
                         <label class="text-name">Код з пошти</label>
-                        <input class="name-form" type="text">
+                        <input class="name-form" type="text" required minlength="6" maxlength="6" name="email_code">
                         <h5 class="under-name">Наприклад: 123456</h5>
                     </div>
-                    <button class="under-button-frame" type="submit">
-                        <a class="text-button" href="/project/authorithation-2/authorithation.html">Ввійти в акаунт</a>
-                    </button>
+                    <h1 class = "error">{{error}}</h1>
+                    <button class="under-button-frame" type="submit">Ввійти в акаунт</button>
                 </form>
             </div>
         </div>
-        <div class = "contacts">
+        <div class = "contacts"  style="padding-top: 51px;">
             <div class = "allIcons">
                 <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
                 <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">
