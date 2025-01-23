@@ -10,34 +10,16 @@
             <h1 class = "h1Generate">Авторизація</h1>
             <div class = "urls">
                 <div class = "mainUrl">
-                    <a href = "" class = "mainPage">Головна</a>
+                    <a href = "{% url 'home_app' %}" class = "mainPage">Головна</a>
                 </div>
-                <a href=""class = "">Реєстрація</a>
-                <a href=""class = "myQRCodesPage">Авторизація</a>
-                <a href="">Мої QR-коди</a>
+
+                <a href="{% url 'registration1' %}" >Реєстрація</a>
+                <a href="{% url 'authorithation1' %}"class = "MyQRCodesPage">Авторизація</a>
+                <a href="{% url 'my_codes' %}">Мої QR-коди</a>
             </div>
         </div>
         <div class="registration-form">
             <div class="registration-frame">
-                <div class="steps">
-                    <div class="step-1">
-                        <div class="step-1-frame">
-                            <h3 class="step-1-text">1</h3>
-                        </div>
-                    </div>
-                    <div class="line-1"></div>
-                    <div class="step-2">
-                        <div class="step-2-frame">
-                            <h3 class="step-2-text">2</h3>
-                        </div>
-                    </div>
-                    <div class="line-2"></div>
-                    <div class="step-3">
-                        <div class="step-3-frame">
-                            <h3 class="step-3-text">3</h3>
-                        </div>
-                    </div>
-                </div>
                 <h1 class="info-text">Інформація про вас</h1>
                 <form method = "post">
                     {% csrf_token%}

@@ -38,7 +38,7 @@
     color: #FF9334;
 }
 .urls{
-    width: 649px;
+    width: 700px;
     height: 58px;
     display: flex;
     flex-direction: row;
@@ -88,6 +88,13 @@ a{
     flex-wrap: nowrap;
     padding-left: 185.5px;
 }
+.buttonFree{
+    text-decoration:underline;
+    border: 0px black solid; 
+    background-color:#EDF4FC; 
+    font-size: 60px;    
+    font-family: 'Jura', sans-serif;
+}
 .h1Free{
     font-size: 60px;
     font-family: 'Jura', sans-serif;
@@ -118,7 +125,10 @@ a{
 
 }
 .h1Standart{
-    font-size: 60px;
+    text-decoration:underline;
+    border: 0px black solid; 
+    background-color:#EDF4FC; 
+    font-size: 60px;    
     font-family: 'Jura', sans-serif;
 }
 
@@ -148,7 +158,10 @@ a{
     flex-wrap: nowrap;
 }
 .h1Pro{
-    font-size: 60px;
+    text-decoration:underline;
+    border: 0px black solid; 
+    background-color:#EDF4FC; 
+    font-size: 60px;    
     font-family: 'Jura', sans-serif;
 }
 .descriptionPro{
@@ -185,6 +198,7 @@ a{
     font-weight: 400;
     font-family: 'Jost', sans-serif;
 
+
 }
 .contacts{
     width: 100%;
@@ -206,3 +220,4 @@ a{
     width: 40px;
     height: 40px;
 }
+

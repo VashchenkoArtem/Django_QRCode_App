@@ -22,11 +22,11 @@ from authorithation3.views import render_authorithation3
 from subscribe.views import render_subscribe
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("", render_home_app),
-    path('codes/', include('my_codes.urls')),
-    path('contacts/', render_contacts),
-    path('registration/', include('registration1.urls')),
-    path('authorithation/', include('authorithation3.urls')),
-    path('subscribe/', render_subscribe)
+    path('admin/', admin.site.urls, name="admin"),
+    path("", render_home_app, name="home_app"),
+    path('codes/', include('my_codes.urls'), name="my_codes_urls"),
+    path('contacts/', render_contacts, name="contacts"),
+    path('registration/', include('registration1.urls'), name="registration1_urls"),
+    path('authorithation/', include('authorithation3.urls'), name="authorithation3_urls"),
+    path('subscribe/', render_subscribe, name="subscribe")
 ]

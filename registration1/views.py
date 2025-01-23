@@ -15,13 +15,19 @@ def render_registration1(request):
         name = request.POST.get("name")
         email = request.POST.get("email")
         password = request.POST.get("password")
-        try:
-            User.objects.create_user(username= name, email= email, password= password)
-            error = ""
-            return redirect("/registration/succesregistration/")
-            
-        except IntegrityError:
-            error = "Такий користувач вже існує!"
-        except ValueError:
-            error = "Поля не можуть бути пустими!"
+        confirm_password = request.POST.get("confirm-password")
+        if password == confirm_password:           
+            try:
+                User.objects.create_user(username= name, email= email, password= password)
+                error = ""
+                return redirect("/registration/succesregistration/")
+                
+            except IntegrityError:
+                error = "Такий користувач вже існує!"
+            except ValueError:
+                error = "Поля не можуть бути пустими!"
+            except:
+                error = "Користувача не знайдено"
+        else:
+            error = "Паролі не співпадають"
     return render(request, "registration1/registration1.html",  context= {"error": error})

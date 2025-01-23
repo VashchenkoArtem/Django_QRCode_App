@@ -20,7 +20,7 @@
     flex-wrap: nowrap;
 }
 .urls{
-    width: 649px;
+    width: 700px;
     height: 58px;
     display: flex;
     flex-direction: row;
@@ -99,4 +99,7 @@ a{
 .imageTelegram{
     width: 40px;
     height: 40px;
+}
+.user-h1{
+    font-family: 'Jost', sans-serif;
 }

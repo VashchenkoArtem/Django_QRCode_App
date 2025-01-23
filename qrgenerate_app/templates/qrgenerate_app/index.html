@@ -17,11 +17,18 @@
                 <h1 class = "h1Generate">Генерування <span class = "spanQR"> QR</span>-кода</h1>
                 <div class = "urls">
                     <div class = "mainUrl">
-                        <a href = "" class = "mainPage">Головна</a>
+                        <a href = "{% url 'home_app' %}" class = "mainPage">Головна</a>
                     </div>
-                    <a href="/"class = "name">Ім'я</a>
-                    <a href="qrgenerate/" class = "MyQRCodesPage" >Мої QR-коди</a>
-                    <a href="" class = "Exit-acaunt">Вийти з акаунту</a>
+                    {% if request.user.is_authenticated %}
+                        <h1 class = "user-h1">{{request.user.username}}</h1>
+                        <a href="{% url 'my_codes' %}" class = "MyQRCodesPage" >Мої QR-коди</a>
+                        <a href = "{% url 'logout' %}"class = "logout-button">Вийти з акаунту</a>
+    
+                    {% else %}
+                        <a href="{% url 'registration1' %}" class = "registrationPage">Реєстрація</a>
+                        <a href="{% url 'authorithation1' %}"class = "authorizationPage">Авторизація</a>
+                        <a href="/codes/my_codes/" class = "MyQRCodesPage" >Мої QR-коди</a>
+                    {% endif %}
                 </div>
             </div>
             <div class="main-form">
@@ -45,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <div class = "contacts" style="    padding-top:69px;">
+            <div class = "contacts" style="    padding-top:24px;">
                 <div class = "allIcons">
                     <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
                     <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">

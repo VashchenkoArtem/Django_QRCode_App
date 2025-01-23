@@ -21,29 +21,44 @@
                 <div class = "mainUrl">
                     <a href = "" class = "mainPage">Головна</a>
                 </div>
-                <a href="/registration/informationabout/"class = "registrationPage">Реєстрація</a>
-                <a href="/authorithation/logininformation/"class = "authorizationPage">Авторизація</a>
-                <a href="/codes/my_codes/" class = "MyQRCodesPage" >Мої QR-коди</a>
+                {% if request.user.is_authenticated %}
+                    <h1 class = "user-h1">{{request.user.username}}</h1>
+                    <a href="{% url 'my_codes' %}" class = "MyQRCodesPage" >Мої QR-коди</a>
+                    <a href = "{% url 'logout' %}"class = "logout-button">Вийти з акаунту</a>
+                {% else %}
+                    <a href="/registration/informationabout/" class = "registrationPage">Реєстрація</a>
+                    <a href="/authorithation/logininformation/"class = "authorizationPage">Авторизація</a>
+                    <a href="/codes/my_codes/" class = "MyQRCodesPage" >Мої QR-коди</a>
+                {% endif %}
             </div>
         </div>
         <div class = "subscribe">
 
             <div class = "subscribeFree">
-                <button class = "buttonFree" style="text-decoration:underline; border: 0px black solid; background-color:#EDF4FC; font-size: 60px;    font-family: 'Jura', sans-serif;">Free</button>
+                <a href="{% url 'subscribe' %}">
+                    <h1 class = "buttonFree" >Free</h1>
+                </a>
+
                 <h1 class = "descritpionFree">Безкоштовно Один QR-код на 6 місяців</h1>
             </div>
 
             <div class = "lineBetweenFreeAndStandart"></div>
             
             <div class = "subscribeStandart">
-                <button class = "h1Standart" style="text-decoration:underline; border: 0px black solid; background-color:#EDF4FC">Standart</button>
+                <a href="{% url 'subscribe' %}">
+                    <h1 class = "h1Standart">Standart</h1>
+                </a>
+
                 <h1 class = "descriptionStandart">2$ на місяць 10 кастомізованих <br>QR-кодів</h1>
             </div>
 
             <div class = "lineBetweenStandartAndPro"></div>
 
             <div class = "subscribePro">
-                <button  type = "submit"class = "h1Pro" style="text-decoration:underline; border: 0px black solid; background-color:#EDF4FC">Pro</button>
+                <a href="{% url 'subscribe' %}">
+                    <h1 class = "h1Pro">Pro</h1>
+                </a>
+                
                 <h1 class = "descriptionPro">10$ на місяць До 100 <br>QR-кодів</h1>
             </div>
             
@@ -55,9 +70,16 @@
         </div>
         <div class = "contacts" style = "padding-top:75px;">
             <div class = "allIcons">
-                <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
-                <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">
-                <img class = "imageCall" src="{% static 'images/callIcon.png' %}" alt="">
+                <a href="{% url 'contacts' %}">
+                    <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
+                </a>
+                <a href="{% url 'contacts' %}">
+                    <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">
+                </a>
+                <a href="{% url 'contacts' %}">
+                    <img class = "imageCall" src="{% static 'images/callIcon.png' %}" alt="">
+                </a>
+
             </div>
         </div>
 
