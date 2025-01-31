@@ -11,6 +11,7 @@
     background-color: #EDF4FC;
     background-size: 100% 100%;
     gap: 15px;
+    background-attachment: fixed;
 }
 
 .imageQRCode {
@@ -206,6 +207,7 @@ a{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column; 
+    padding-top: 75px;
 }
 .allIcons{
     width: 212px;

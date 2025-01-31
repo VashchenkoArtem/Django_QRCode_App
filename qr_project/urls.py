@@ -20,6 +20,9 @@ from home_app.views import render_home_app
 from contacts_app.views import render_contacts
 from authorithation3.views import render_authorithation3
 from subscribe.views import render_subscribe
+from . import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls, name="admin"),
@@ -30,3 +33,6 @@ urlpatterns = [
     path('authorithation/', include('authorithation3.urls'), name="authorithation3_urls"),
     path('subscribe/', render_subscribe, name="subscribe")
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

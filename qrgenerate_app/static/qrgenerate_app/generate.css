@@ -189,11 +189,12 @@ a{
 
 .main-form{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     margin-right: 200px;
     width: 100%;
     height: 286px;
+    gap: 300px;
 }
 
 .form{
@@ -443,8 +444,26 @@ a{
 }
 
 .create-qr{
-    width: 116px;
-    height: 24px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 9px;
+    gap: 40px;
+
+    width: 236px;
+    height: 54px;
+
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    border-radius: 15px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 3;
+    flex-grow: 0;
 
     font-family: 'Jost';
     font-style: normal;
@@ -479,4 +498,9 @@ a{
     width: 40px;
     height: 40px;
 
+}
+
+.qr-code{
+    width: 300px;
+    height: 300px;
 }

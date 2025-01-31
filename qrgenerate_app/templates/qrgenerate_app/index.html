@@ -31,27 +31,36 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="main-form">
-                <div class="form">
-                    <div class="form-form"> 
-                            <label class="qr-name">Назва QR-кода</label>
-                            <input class="qr-name-example" type ="text">
-                            <h5 class="qr-under">Наприклад: Figma QR</h5>
+            <form method="post">
+                {% csrf_token %}
+                <div class="main-form">
+                    <div class="form">
+                        <div class="form-form"> 
+                                <label class="qr-name">Назва QR-кода</label>
+                                <input class="qr-name-example" type ="text" name = "name">
+                                <h5 class="qr-under">Наприклад: Figma QR</h5>
+                        </div>
+                        <div class="size-form">
+                                <label class="size">Розмір</label>
+                                <input class="size-example" type ="text" name = "size">
+                        </div>
+                        <div class="url-form">
+                                <label class="url">Посилання</label>
+                                <input class="url-example" type ="text" name = "url">
+                                <h5 class="url-example-text">Наприклад: https://www.figma.com/</h5>
+                        </div>
+                        <div class="cr-qr-form">    
+                                <button class="create-qr ">Створити QR</button>
+                        </div>
                     </div>
-                    <div class="size-form">
-                            <label class="size">Розмір</label>
-                            <input class="size-example" type ="text">
-                    </div>
-                    <div class="url-form">
-                            <label class="url">Посилання</label>
-                            <input class="url-example" type ="text">
-                            <h5 class="url-example-text">Наприклад: https://www.figma.com/</h5>
-                    </div>
-                    <div class="cr-qr-form">    
-                            <h3 class="create-qr">Створити QR</h3>
-                    </div>
+                    {% if qr_code  %}
+                        <img class= "qr-code" src="{{ qr_code.image.url}}" alt="">
+                    {% else %}
+                        <div class="qr-code"></div>
+                    {% endif %}    
+                        
                 </div>
-            </div>
+            </form>
             <div class = "contacts" style="    padding-top:24px;">
                 <div class = "allIcons">
                     <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
