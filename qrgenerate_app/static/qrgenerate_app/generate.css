@@ -207,22 +207,19 @@ a{
     padding: 20px;
     margin-left: 180px;
     gap: 29px;
-
-
-
     width: 451px;
-    height: 292px;
-
+    height: auto;
     background-color: rgba(255, 255, 255, 0.66);
     border-radius: 30px;
-
-
     flex: none;
     order: 0;
     flex-grow: 0;
+    overflow-y: scroll;
 }
 
 .form-form{
+    margin-top: 100px;
+    margin-right: 210px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -327,9 +324,7 @@ a{
     
     /* Inside auto layout */
     flex: none;
-    order: 0;
     align-self: stretch;
-    flex-grow: 0;
 }
 
 .size-example{
@@ -344,9 +339,7 @@ a{
     
     /* Inside auto layout */
     flex: none;
-    order: 1;
     align-self: stretch;
-    flex-grow: 0;
 }
 
 .url-form{
@@ -361,8 +354,6 @@ a{
 
     /* Inside auto layout */
     flex: none;
-    order: 2;
-    flex-grow: 0;
 }
 
 .url{
@@ -419,24 +410,96 @@ a{
     align-self: stretch;
     flex-grow: 0;
 }
-
+.colorbg-form{ 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    padding: 0px; 
+    width: 191px; 
+    height: 70px; 
+    flex: none; 
+    order: 10;
+    margin-right: 20px; 
+} 
+.colorbg-name{ 
+    width: 191px; 
+    height: 29px; 
+    font-family: 'Jost'; 
+    font-style: normal; 
+    font-weight: 400; 
+    font-size: 20px; 
+    line-height: 29px; 
+    color: rgba(0, 0, 0, 0.5); 
+    flex: none; 
+    order: 0; 
+    align-self: stretch; 
+    flex-grow: 0; 
+} 
+.colorbg-input{ 
+    box-sizing: border-box; 
+    width: 191px; 
+    height: 34px; 
+    background: #F9FBFE; 
+    border: 1px solid #C4C4C4; 
+    border-radius: 10px; 
+    flex: none; 
+    border: none; 
+    align-self: stretch; 
+    flex-grow: 0; 
+} 
+.colors{ 
+    display: flex; 
+    gap: 10px; 
+} 
+.colorqr-form{ 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    padding: 0px; 
+    width: 191px; 
+    height: 70px; 
+    flex: none; 
+    flex-grow: 0; 
+} 
+.colorqr-name{ 
+    width: 191px; 
+    height: 29px; 
+    font-family: 'Jost'; 
+    font-style: normal; 
+    font-weight: 400; 
+    font-size: 20px; 
+    line-height: 29px; 
+    color: rgba(0, 0, 0, 0.5); 
+    flex: none; 
+    order: 0; 
+    align-self: stretch; 
+    flex-grow: 0; 
+} 
+.colorqr-input{ 
+    box-sizing: border-box; 
+    width: 191px; 
+    height: 34px; 
+    background: #F9FBFE; 
+    border: 1px solid #C4C4C4; 
+    border-radius: 10px; 
+    flex: none; 
+    border: none; 
+    align-self: stretch; 
+    flex-grow: 0; 
+}
 .cr-qr-form{
     box-sizing: border-box;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 12px 9px;
     gap: 40px;
-
     width: 236px;
     height: 54px;
-
     background: #FFFFFF;
     border: 1px solid #C4C4C4;
     border-radius: 15px;
-
     /* Inside auto layout */
     flex: none;
     order: 3;
@@ -503,4 +566,6 @@ a{
 .qr-code{
     width: 300px;
     height: 300px;
+    border: 0px black solid;
+    border-radius: 30px;
 }

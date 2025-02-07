@@ -37,7 +37,19 @@
         </div>
         <main>
             <div class="codes">
-                
+                {% for user in User %}
+                    {% for qrcode in QR_Codes %}
+                        {% if user.id == qrcode.user_id %}
+                            <div class="bg-qr-сode">
+                                <div class="qr-code">
+                                    <img src="/media/{{qrcode.image}}" alt="" class="qr-code-img">
+                                    <button class = "qr-code-title" type = "submit">{{qrcode.name}}</button>
+                                    <button class = "qr-code-button" type="submit">Скачати</button>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
             </div>
             <div class = "contacts" style="padding-top: 29px;">
                 <div class = "allIcons">

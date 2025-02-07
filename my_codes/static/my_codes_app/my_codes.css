@@ -60,8 +60,12 @@ a{
     opacity: 100%;
 }
 .codes{
-    width: 100%;
+    max-width: 100%;
     height: 506px;
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+    overflow-y: scroll;
 }
 
 .contacts{
@@ -91,4 +95,47 @@ a{
 .user-h1{
     font-family: 'Jost', sans-serif;
     font-weight: bold;
+}
+.bg-qr-code{ 
+    width: 269px; 
+    height: 321px; 
+} 
+ 
+.qr-code{ 
+    width: 234px; 
+    height: 265px;   
+    border-radius: 30px; 
+    margin: 30px 40px 19px 40px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px; 
+} 
+ 
+.qr-code-img{ 
+    width: 250px; 
+    height:250px; 
+    border-radius: 30px; 
+    border: 1px black solid; 
+    margin-top: 30px; 
+} 
+ 
+.qr-code-title{ 
+    all: unset; 
+    font-size: 25px; 
+ 
+} 
+.qr-code-title:hover{ 
+    cursor: pointer; 
+    text-decoration: underline; 
+} 
+.qr-code-button{ 
+    all: unset; 
+    font-size: 30px; 
+    font-weight: bold; 
+} 
+ 
+.qr-code-button:hover{ 
+    cursor: pointer; 
+    text-decoration: underline; 
 }
