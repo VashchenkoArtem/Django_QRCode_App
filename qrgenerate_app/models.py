@@ -8,4 +8,4 @@ class QR_Codes(models.Model):
     name = models.CharField(max_length = 255, null = True)
     url = models.TextField(null = True)
     image = models.ImageField(upload_to = "", null = True)
-    date_created = models.DateTimeField(auto_now = True)
+    date_created = models.CharField(max_length = 15)

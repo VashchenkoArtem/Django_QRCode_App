@@ -139,3 +139,9 @@ a{
     cursor: pointer; 
     text-decoration: underline; 
 }
+.qr-code-date{
+    text-align: center;
+}
+span{
+    font-weight: normal;
+}

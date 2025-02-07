@@ -42,9 +42,13 @@
                         {% if user.id == qrcode.user_id %}
                             <div class="bg-qr-сode">
                                 <div class="qr-code">
-                                    <img src="/media/{{qrcode.image}}" alt="" class="qr-code-img">
-                                    <button class = "qr-code-title" type = "submit">{{qrcode.name}}</button>
-                                    <button class = "qr-code-button" type="submit">Скачати</button>
+                                    <form method="post">
+                                        {% csrf_token%}
+                                        <img src="/media/{{qrcode.image}}" alt="" class="qr-code-img">
+                                        <button class = "qr-code-title" type = "submit">{{qrcode.name}}</button>
+                                        <h2 class = "qr-code-date"><span>Дата створення: <br> </span>{{qrcode.date_created}}</h2>
+                                        <button class = "qr-code-button" type="submit">Скачати</button>
+                                    </form>
                                 </div>
                             </div>
                         {% endif %}

@@ -31,32 +31,47 @@
                     {% endif %}
                 </div>
             </div>
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="main-form">
                     <div class="form">
-                        <div class="form-form"> 
+                        {% if error %}
+                            <div class="form-form"> 
+                                    <label class="qr-name">Назва QR-кода</label>
+                                    <input class="qr-name-example" type ="text" name = "name" required>
+                                    <h5 class="qr-under">Наприклад: Figma QR</h5>
+                            </div>
+                        {% else %}
+                            <div class="form-form1"> 
                                 <label class="qr-name">Назва QR-кода</label>
-                                <input class="qr-name-example" type ="text" name = "name">
+                                <input class="qr-name-example" type ="text" name = "name" required>
                                 <h5 class="qr-under">Наприклад: Figma QR</h5>
-                        </div>
+                            </div>
+                        {% endif%}
                         <div class="url-form">
                                 <label class="url">Посилання</label>
-                                <input class="url-example" type ="text" name = "url">
+                                <input class="url-example" type ="text" name = "url" required>
                                 <h5 class="url-example-text">Наприклад: https://www.figma.com/</h5>
                         </div>
                         <div class="colors">
                             <div class="colorbg-form">
                                 <label class="colorbg-name">Колір фону</label>
-                                <input type= "color" name = "colorbg" class="colorbg-input"  >
+                                <input type= "color" name = "colorbg" class="colorbg-input" value="#ffffff">
                             </div>
                             <div class = "colorqr-form">
                                 <label class="colorqr-name">Колір QR-Кода</label>
-                                <input type="color"name = "colorqr" class="colorqr-input" >
+                                <input type="color"name = "colorqr" class="colorqr-input" value = "black">
                             </div>
                         </div>
+                        <div class="image-form">
+                            <label class="image-label">Зображення в QR-Коді</label>
+                            <input type = "file" class = "image-input" name = "image" accept = "image/*">
+                        </div>
+                        {% if error %}
+                            <h1 class = "error">{{error}}</h1>
+                        {% endif%}
                         <div class="cr-qr-form">    
-                                <button class="create-qr ">Створити QR</button>
+                                <button class="create-qr" type="submit" >Створити QR</button>
                         </div>
                     </div>
                     {% if qr_code  %}

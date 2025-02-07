@@ -218,23 +218,32 @@ a{
 }
 
 .form-form{
-    margin-top: 100px;
-    margin-right: 210px;
+    margin-top: 230px;
+    margin-right: 213px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
-
     width: 191px;
     height: 70px;
-
-
-    /* Inside auto layout */
     flex: none;
     order: 0;
     flex-grow: 0;
 }
 
+.form-form1{
+    margin-top: 180px;
+    margin-right: 213px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    width: 191px;
+    height: 70px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
 .qr-name{
     width: 191px;
     height: 29px;
@@ -568,4 +577,28 @@ a{
     height: 300px;
     border: 0px black solid;
     border-radius: 30px;
+}
+
+.error{
+    color: red;
+    font-size: 20px;
+}
+
+.image-label{
+    width: 191px; 
+    height: 29px; 
+    font-family: 'Jost'; 
+    font-style: normal; 
+    font-weight: 400; 
+    font-size: 20px; 
+    line-height: 29px; 
+    color: rgba(0, 0, 0, 0.5); 
+    flex: none; 
+    order: 0; 
+    align-self: stretch; 
+    flex-grow: 0; 
+}
+
+.image-form{
+    padding-left: 15px;
 }
