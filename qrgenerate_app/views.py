@@ -7,9 +7,21 @@ from .models import QR_Codes
 import os
 import PIL
 import datetime
+from qrcode.image.styledpil import StyledPilImage
+from qrcode.image.styles.moduledrawers import (
+    CircleModuleDrawer,
+    SquareModuleDrawer,
+    GappedSquareModuleDrawer,
+    RoundedModuleDrawer,
+    HorizontalBarsDrawer,
+    VerticalBarsDrawer
+
+)
+from django.contrib.auth.decorators import login_required
+from PIL import ImageDraw
 # Create your views here.
 
-
+@login_required
 def qr_generate_app(request):
     qr_code = None
     error = None
@@ -19,7 +31,8 @@ def qr_generate_app(request):
         bgcolor = request.POST.get("colorbg")
         qrcolor = request.POST.get("colorqr")
         image_input = request.FILES.get("image")
-
+        form_input = request.POST.get("figure")
+        print(form_input)
         qr = qrcode.QRCode(
             version = 1,
             error_correction = qrcode.constants.ERROR_CORRECT_H,
@@ -29,9 +42,31 @@ def qr_generate_app(request):
         
         qr.add_data(url_code)
         qr.make(fit = True)
+        if form_input == "default":
+            eye_module = SquareModuleDrawer()
+            dots_module = SquareModuleDrawer()
 
-        img = qr.make_image(back_color = bgcolor, fill_color = qrcolor)
-        
+        if form_input == "square":
+            eye_module = GappedSquareModuleDrawer()
+            dots_module = GappedSquareModuleDrawer()
+
+        if form_input == "circle":
+            eye_module = CircleModuleDrawer()
+            dots_module = CircleModuleDrawer()
+
+        if form_input == "vertical-line":
+            eye_module = VerticalBarsDrawer()
+            dots_module = VerticalBarsDrawer()
+
+        if form_input == "horizontal-line":
+            eye_module = HorizontalBarsDrawer()
+            dots_module = HorizontalBarsDrawer()
+            
+        if form_input == "rounded":
+            eye_module = RoundedModuleDrawer(radius_ratio = float(1))
+            dots_module = RoundedModuleDrawer(radius_ratio= float(1)) 
+        img = qr.make_image(image_factory = StyledPilImage, module_drawer = dots_module, eye_drawer = eye_module, back_color = bgcolor, fill_color = qrcolor)
+
         if image_input:
             logo = PIL.Image.open(image_input)
             qr_size = img.size[0]

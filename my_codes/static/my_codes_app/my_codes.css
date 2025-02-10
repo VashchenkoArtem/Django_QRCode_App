@@ -1,6 +1,7 @@
 *{
     margin:0px;
     padding: 0px;
+    font-family: "Jost", sans-serif;
 }
 .Screen{
     height: 100%;
@@ -15,7 +16,7 @@
     height: 136px;
     display: flex;
     flex-direction: row;
-    gap: 180px;
+    gap: 150px;
 
 }
 .urls{
@@ -26,31 +27,34 @@
     align-items: center;
     gap: 50px;
     padding-top: 50px;
+    font-weight: normal;
 }
 .h1Generate{
     width: 428px;
     font-size: 64px;
     height: 63.07px;
     padding-left: 200px;
-    padding-top: 50px;
+    padding-top: 35px;
 }
 .spanQR{
+    font-weight: bold;
     color: #FF9334;
 }
 a{
     text-decoration: none;
     font-family: 'Arimo', sans-serif;
-    font-weight: bold;
     color: black;
     font-size: 20px;
+
 }
 .MyQRCodesPage{
     display: flex;
     flex-direction: row;
-    width: 190px;
+    width: 148px;
     height: 39px;
     background-color: rgba(255, 147, 52, 0.62);
     border-radius: 30px;
+    font-weight: bold;
     align-items: center;
     justify-content: center;
     border: black solid 1px;
@@ -89,9 +93,6 @@ a{
     width: 40px;
     height: 40px;
 }
-.logout-button{
-    width: 200px;
-}
 .user-h1{
     font-family: 'Jost', sans-serif;
     font-weight: bold;
@@ -123,6 +124,9 @@ a{
 .qr-code-title{ 
     all: unset; 
     font-size: 25px; 
+    width: 234px;
+    text-align: center;
+    font-weight: bold; 
  
 } 
 .qr-code-title:hover{ 
@@ -133,6 +137,7 @@ a{
     all: unset; 
     font-size: 30px; 
     font-weight: bold; 
+    margin-left: 60px;
 } 
  
 .qr-code-button:hover{ 
@@ -140,6 +145,7 @@ a{
     text-decoration: underline; 
 }
 .qr-code-date{
+    width: 240px;
     text-align: center;
 }
 span{

@@ -20,11 +20,11 @@
         <div class = "hat"; style="height: 136px; ">
             <h1 class = "h1Generate">Мої <span class = "spanQR">QR</span>-коди</h1>
             <div class = "urls">
+
                 <div class = "mainUrl">
                     <a href = "{% url 'home_app' %}" class = "mainPage">Головна</a>
                 </div>
                 {% if request.user.is_authenticated %}
-                    <h1 class = "user-h1">{{request.user.username}}</h1>
                     <a href="{% url 'my_codes' %}" class = "MyQRCodesPage" >Мої QR-коди</a>
                     <a href = "{% url 'logout' %}"class = "logout-button">Вийти з акаунту</a>
 
@@ -33,6 +33,7 @@
                     <a href="{% url 'authorithation1' %}"class = "authorizationPage">Авторизація</a>
                     <a href="/codes/my_codes/" class = "MyQRCodesPage" >Мої QR-коди</a>
                 {% endif %}
+                <h1 class = "user-h1">{{request.user.username}}</h1>
             </div>
         </div>
         <main>
@@ -47,7 +48,7 @@
                                         <img src="/media/{{qrcode.image}}" alt="" class="qr-code-img">
                                         <button class = "qr-code-title" type = "submit">{{qrcode.name}}</button>
                                         <h2 class = "qr-code-date"><span>Дата створення: <br> </span>{{qrcode.date_created}}</h2>
-                                        <button class = "qr-code-button" type="submit">Скачати</button>
+                                        <a class = "qr-code-button" type="submit" href = "/media/qr_codes/{{user.username}}/{{qrcode.name}}.png" download="{{qrcode.name}}.png">Скачати</a>
                                     </form>
                                 </div>
                             </div>

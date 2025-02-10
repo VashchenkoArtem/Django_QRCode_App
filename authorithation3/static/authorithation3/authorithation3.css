@@ -21,7 +21,7 @@
     height: 170px;
     display: flex;
     flex-direction: row;
-    gap: 43px;
+    gap: 222px;
 }
 .h1Generate{
     width: 390px;
@@ -45,13 +45,13 @@
 a{
     text-decoration: none;
     font-family: 'Arimo', sans-serif;
-    font-weight: bold;
     color: black;
     font-size: 20px;
 }
 .MyQRCodesPage{
     display: flex;
     flex-direction: row;
+    font-weight: bold;
     width: 148px;
     height: 39px;
     background-color: rgba(255, 147, 52, 0.62);

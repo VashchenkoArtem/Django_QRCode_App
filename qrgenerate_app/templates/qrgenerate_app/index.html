@@ -16,11 +16,12 @@
             <div class = "hat">
                 <h1 class = "h1Generate">Генерування <span class = "spanQR"> QR</span>-кода</h1>
                 <div class = "urls">
+
                     <div class = "mainUrl">
                         <a href = "{% url 'home_app' %}" class = "mainPage">Головна</a>
                     </div>
                     {% if request.user.is_authenticated %}
-                        <h1 class = "user-h1">{{request.user.username}}</h1>
+
                         <a href="{% url 'my_codes' %}" class = "MyQRCodesPage" >Мої QR-коди</a>
                         <a href = "{% url 'logout' %}"class = "logout-button">Вийти з акаунту</a>
     
@@ -29,6 +30,7 @@
                         <a href="{% url 'authorithation1' %}"class = "authorizationPage">Авторизація</a>
                         <a href="/codes/my_codes/" class = "MyQRCodesPage" >Мої QR-коди</a>
                     {% endif %}
+                    <h1 class = "user-h1">{{request.user.username}}</h1>
                 </div>
             </div>
             <form method="post" enctype="multipart/form-data">
@@ -66,6 +68,17 @@
                         <div class="image-form">
                             <label class="image-label">Зображення в QR-Коді</label>
                             <input type = "file" class = "image-input" name = "image" accept = "image/*">
+                        </div>
+                        <div class="figure-form">
+                            <label class="figure-label">Форма пікселів</label>
+                            <select name="figure" class = "figure-select">
+                                <option value="default">Звичайні</option>
+                                <option value="square">Квадратні</option>
+                                <option value="circle">Круглі</option>
+                                <option value="vertical-line">У вигляді вертикальних ліній</option>
+                                <option value="horizontal-line">У вигляді горизонтальних ліній</option>
+                                <option value="rounded">Скруглені кути</option>
+                            </select>
                         </div>
                         {% if error %}
                             <h1 class = "error">{{error}}</h1>

@@ -21,15 +21,15 @@
                     <a href = "{% url 'home_app' %}" class = "mainPage">Головна</a>
                 </div>
                 {% if request.user.is_authenticated %}
-                    <h1 class = "user-h1">{{request.user.username}}</h1>
+
                     <a href="{% url 'my_codes' %}" class = "MyQRCodesPage" >Мої QR-коди</a>
                     <a href = "{% url 'logout' %}"class = "logout-button">Вийти з акаунту</a>
-
                 {% else %}
                     <a href="{% url 'registration1' %}" class = "registrationPage">Реєстрація</a>
                     <a href="{% url 'authorithation1' %}"class = "authorizationPage">Авторизація</a>
-                    <a href="/codes/my_codes/" class = "MyQRCodesPage" >Мої QR-коди</a>
+                    <a href="/codes/my_codes/" class = "" >Мої QR-коди</a>
                 {% endif %}
+                <h1 class = "user-h1">{{request.user.username}}</h1>
             </div>
         </div>
         <form method="POST" class = "subscribe-form">

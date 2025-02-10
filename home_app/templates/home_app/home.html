@@ -22,7 +22,6 @@
                     <a href = "" class = "mainPage">Головна</a>
                 </div>
                 {% if request.user.is_authenticated %}
-                    <h1 class = "user-h1">{{request.user.username}}</h1>
                     <a href="{% url 'my_codes' %}" class = "MyQRCodesPage" >Мої QR-коди</a>
                     <a href = "{% url 'logout' %}"class = "logout-button">Вийти з акаунту</a>
                 {% else %}
@@ -30,6 +29,7 @@
                     <a href="/authorithation/logininformation/"class = "authorizationPage">Авторизація</a>
                     <a href="/codes/my_codes/" class = "MyQRCodesPage" >Мої QR-коди</a>
                 {% endif %}
+                <h1 class = "user-h1">{{request.user.username}}</h1>
             </div>
         </div>
         <div class = "subscribe">
