@@ -15,12 +15,18 @@ from qrcode.image.styles.moduledrawers import (
     RoundedModuleDrawer,
     HorizontalBarsDrawer,
     VerticalBarsDrawer
-
 )
+from qrcode.image.styles.colormasks import RadialGradiantColorMask
 from django.contrib.auth.decorators import login_required
-from PIL import ImageDraw
 # Create your views here.
+def hex_to_rgb(color):
+    color_rgb = color.lstrip('#')
+    r = int(color_rgb[0:2], 16)
+    g = int(color_rgb[2:4], 16)
+    b = int(color_rgb[4:6], 16)
+    return r, g, b
 
+        
 @login_required
 def qr_generate_app(request):
     qr_code = None
@@ -32,7 +38,6 @@ def qr_generate_app(request):
         qrcolor = request.POST.get("colorqr")
         image_input = request.FILES.get("image")
         form_input = request.POST.get("figure")
-        print(form_input)
         qr = qrcode.QRCode(
             version = 1,
             error_correction = qrcode.constants.ERROR_CORRECT_H,
@@ -65,7 +70,9 @@ def qr_generate_app(request):
         if form_input == "rounded":
             eye_module = RoundedModuleDrawer(radius_ratio = float(1))
             dots_module = RoundedModuleDrawer(radius_ratio= float(1)) 
-        img = qr.make_image(image_factory = StyledPilImage, module_drawer = dots_module, eye_drawer = eye_module, back_color = bgcolor, fill_color = qrcolor)
+
+        color_mask = RadialGradiantColorMask(back_color=(hex_to_rgb(bgcolor)) ,edge_color=(hex_to_rgb(qrcolor)) ,center_color=(hex_to_rgb(qrcolor)))
+        img = qr.make_image(image_factory = StyledPilImage, module_drawer = dots_module, eye_drawer = eye_module, back_color = bgcolor, fill_color = qrcolor, color_mask = color_mask)
 
         if image_input:
             logo = PIL.Image.open(image_input)

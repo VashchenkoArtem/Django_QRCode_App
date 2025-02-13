@@ -111,8 +111,14 @@ a{
     flex-direction: column; 
     align-items: center; 
     gap: 10px; 
+    padding-bottom: 100px;
 } 
  
+form{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
 .qr-code-img{ 
     width: 250px; 
     height:250px; 
@@ -124,9 +130,8 @@ a{
 .qr-code-title{ 
     all: unset; 
     font-size: 25px; 
-    width: 234px;
-    text-align: center;
-    font-weight: bold; 
+    font-weight: bold;
+
  
 } 
 .qr-code-title:hover{ 
@@ -137,7 +142,6 @@ a{
     all: unset; 
     font-size: 30px; 
     font-weight: bold; 
-    margin-left: 60px;
 } 
  
 .qr-code-button:hover{ 
@@ -150,4 +154,22 @@ a{
 }
 span{
     font-weight: normal;
+}
+
+.button-delete{
+    all: unset;
+}
+
+.buttons-download-delete{
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+}
+.bin-image{
+    width: 25px;
+    height: 25px;
+}
+
+.bin-image:hover{
+    cursor: pointer;
 }
