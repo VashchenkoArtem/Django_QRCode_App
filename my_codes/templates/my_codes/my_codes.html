@@ -64,6 +64,11 @@
                     </form>
                 {% endif %}
                 
+                        
+
+                    </div >
+                      
+               {% endif %}
                 {% for user in User %}
                     {% for qrcode in QR_Codes %}
                         {% if user.id == qrcode.user_id %}
@@ -102,4 +107,5 @@
         </main>
     </div>
 
+    <script src="{% static 'js/my_codes.js'%}"></script>
 {% endblock %}

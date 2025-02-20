@@ -34,6 +34,8 @@ def render_my_codes(request):
                 date_expire = date_parse + relativedelta(months = 6)   
                 date_expire_code = date_expire.strftime("%Y-%m-%d %H:%M:%S")
                 date = f"{date_expire_code.split(':')[0].split('-')[2].split(' ')[0]}.{date_expire_code.split(':')[0].split('-')[1].split(' ')[0]} {date_expire_code.split(':')[0].split(' ')[1]}:{date_expire_code.split(':')[1].split('-')[0].split(' ')[0]}"
+
+
             except:
                 pass
     return render(request, "my_codes/my_codes.html", context = {
