@@ -63,12 +63,6 @@
                             </div>
                     </form>
                 {% endif %}
-                
-                        
-
-                    </div >
-                      
-               {% endif %}
                 {% for user in User %}
                     {% for qrcode in QR_Codes %}
                         {% if user.id == qrcode.user_id %}
