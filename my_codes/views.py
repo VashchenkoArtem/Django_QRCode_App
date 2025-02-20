@@ -5,8 +5,9 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from dateutil import parser
 from dateutil.relativedelta import relativedelta
+
 from subscribe.models import UserSubscribe
-# @login_required
+@login_required
 def render_my_codes(request):
     specific_qrcode = None
     date_expire = None
@@ -40,5 +41,6 @@ def render_my_codes(request):
         "QR_Codes": QR_Codes.objects.all(),
         "specific_qrcode": specific_qrcode,
         "date_expired": date,
-        "delete": delete
+        "delete": delete,
+        "date_expired": date
     })
