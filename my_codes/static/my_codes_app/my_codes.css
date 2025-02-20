@@ -173,3 +173,37 @@ span{
 .bin-image:hover{
     cursor: pointer;
 }
+.form-qr{
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    border: 1px black solid;
+}
+
+.qr-objects{
+    display: flex;
+    flex-direction: column;
+}
+
+.specific-url{
+    font-size: 20px;
+}
+.specific-date-created{
+    font-size: 20px;
+}
+.specific-date-expired{
+    font-size: 20px;
+}
+.specific-image{
+    width: 250px;
+    height: 250px;
+    margin-left: 45px;
+}
