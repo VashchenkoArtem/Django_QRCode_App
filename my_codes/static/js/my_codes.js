@@ -8,3 +8,23 @@ for (let count = 0; count < buttonsDelete.length; count ++){
         }
     )
 }
+
+const buttonsCode = document.querySelectorAll(".qr-code-title");
+
+for (let countCodes = 0; countCodes < buttonsCode.length; countCodes++) {
+    let buttonCode = buttonsCode[countCodes];
+    buttonCode.addEventListener(
+        "click",
+        function (event) {
+            document.cookie = `specificQrcodeID=${buttonCode.id}`;
+        }
+    );
+}
+
+const bgButton = document.querySelector(".bg-form");
+
+bgButton.addEventListener("click",
+    function(){
+        bgButton.classList.toggle("disabled");
+    }
+)

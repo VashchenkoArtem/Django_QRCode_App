@@ -32,30 +32,40 @@
                 <h1 class = "user-h1">{{request.user.username}}</h1>
             </div>
         </div>
-        <form method="POST" class = "subscribe-form">
+        {% if message %}
+            <div class="form-qr">
+                <div class="qr-objects">
+                    <h1 class = "h1-vitannya">Вітаємо!</h1>
+                    <h1 class = "subscribe-type">{{message}}</h1>
+                    <a class = "url-home" href="{% url 'home_app'%}">На головну</a>
+                </div>
+            </div >
+        {% endif%}
+        <form method="post" class = "subscribe-form">
+            {% csrf_token%}
             <div class = "form"> 
-                <h1 class = "subscribe-buy">Оформлення підписки</h1>    
-                <div class = "form-inputs">
+                    <h1 class = "subscribe-buy">Оформлення підписки</h1>    
+                    <div class = "form-inputs">
 
-                        <div class = "input-number">
-                            <h1 class = "number-text">Номер платіжної карти</h1>
-                            <input  class = "number-input" type="text">
-                            <h1 class = "number-clue">Наприклад: 1234 5678 9012 3456</h1>
+                            <div class = "input-number">
+                                <h1 class = "number-text">Номер платіжної карти</h1>
+                                <input  class = "number-input" name = "card" type="text">
+                                <h1 class = "number-clue">Наприклад: 1234 5678 9012 3456</h1>
+                            </div>
+                        <div class = "input-cvv">
+                            <h1 class = "cvv-text">CVV/CVC код</h1>
+                            <input class = "cvv-input" name = "cvv" type="password">
+                            <h1 class = "cvv-clue">Наприклад: 123</h1>
                         </div>
-                    <div class = "input-cvv">
-                        <h1 class = "cvv-text">CVV/CVC код</h1>
-                        <input class = "cvv-input" type="password">
-                        <h1 class = "cvv-clue">Наприклад: 123</h1>
+                        <div class = "input-expiration">
+                            <h1 class = "expiration-text">Термін придатності</h1>
+                            <input class = "expiration-input" name = "date" type="month">
+                            <h1 class = "expiration-clue">Наприклад: 12/24</h1>
+                        </div>
                     </div>
-                    <div class = "input-expiration">
-                        <h1 class = "expiration-text">Термін придатності</h1>
-                        <input class = "expiration-input" type="month">
-                        <h1 class = "expiration-clue">Наприклад: 12/24</h1>
+                    <div class = "subscribe-button" >
+                        <button class = "button" id = "button" type="submit">Оформити підписку</button>
                     </div>
-                </div>
-                <div class = "subscribe-button">
-                    <button type="submit">Оформити підписку</button>
-                </div>
             </div>
         </form>
         <div class = "contacts" style="padding-top: 25px;">
@@ -66,5 +76,5 @@
             </div>
         </div>
     </div>
-        
+    <script src = "{% static 'subscribe/js/subscribe.js'%}"></script>
 {% endblock %}

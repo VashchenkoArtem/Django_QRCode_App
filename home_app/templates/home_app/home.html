@@ -35,7 +35,7 @@
         <div class = "subscribe">
 
             <div class = "subscribeFree">
-                <a href="{% url 'subscribe' %}">
+                <a class = "freeButton" href="{% url 'subscribe' %}">
                     <h1 class = "buttonFree" >Free</h1>
                 </a>
 
@@ -45,7 +45,7 @@
             <div class = "lineBetweenFreeAndStandart"></div>
             
             <div class = "subscribeStandart">
-                <a href="{% url 'subscribe' %}">
+                <a  class = "buttonStandart"href="{% url 'subscribe' %}">
                     <h1 class = "h1Standart">Standart</h1>
                 </a>
 
@@ -55,7 +55,7 @@
             <div class = "lineBetweenStandartAndPro"></div>
 
             <div class = "subscribePro">
-                <a href="{% url 'subscribe' %}">
+                <a class = "proButton" href="{% url 'subscribe' %}">
                     <h1 class = "h1Pro">Pro</h1>
                 </a>
                 
@@ -84,5 +84,5 @@
         </div>
 
     </div>
-
+    <script src="{% static 'js/home.js'%}"></script>
 {% endblock %}

@@ -173,3 +173,93 @@ span{
 .bin-image:hover{
     cursor: pointer;
 }
+.form-qr{
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    border: 1px black solid;
+}
+
+.qr-objects{
+    display: flex;
+    flex-direction: column;
+}
+
+.specific-url{
+    font-size: 20px;
+}
+.specific-date-created{
+    font-size: 20px;
+}
+.specific-date-expired{
+    font-size: 20px;
+}
+.specific-image{
+    width: 250px;
+    height: 250px;
+    margin-left: 45px;
+}
+.bg-form{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-confirmed{
+    width: 400px;
+    height: 200px;
+    background-color: rgba(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    border: 1px black solid;
+    gap: 20px;
+}
+
+.h1-confirmed{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.confirm-delete{
+    all: unset;
+    cursor: pointer;
+    color: red;
+    border: 1px black solid;
+    border-radius: 30px;
+    width: 150px;
+    text-align: center;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.confirm-delete:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.bg-form.disabled{
+    visibility: hidden;
+
+}
+

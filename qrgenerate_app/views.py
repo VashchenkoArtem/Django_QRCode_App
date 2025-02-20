@@ -18,6 +18,7 @@ from qrcode.image.styles.moduledrawers import (
 )
 from qrcode.image.styles.colormasks import RadialGradiantColorMask
 from django.contrib.auth.decorators import login_required
+from subscribe.models import UserSubscribe
 # Create your views here.
 def hex_to_rgb(color):
     color_rgb = color.lstrip('#')
@@ -95,9 +96,12 @@ def qr_generate_app(request):
         date = datetime.datetime.strftime(date_now, "%Y-%m-%d %H:%M:%S")
         format_date = f"{date.split(':')[0].split('-')[2].split(' ')[0]}.{date.split(':')[0].split('-')[1].split(' ')[0]} {date.split(':')[0].split('-')[2].split(' ')[1]}:{date.split(':')[1].split('-')[0].split(' ')[0]}"
         try: 
-            qr_code = QR_Codes.objects.create(user = request.user ,name = name_code, url = url_code, date_created = format_date)
-            qr_code.image.save(file_path, img_content)
-            qr_code.save()
+            if len(QR_Codes.objects.filter(user_id = request.user.id)) < UserSubscribe.objects.get(user_id = request.user.id).max_count_qrs:
+                qr_code = QR_Codes.objects.create(user = request.user ,name = name_code, url = url_code, date_created = format_date)
+                qr_code.image.save(file_path, img_content)
+                qr_code.save()
+            else:
+                error = "Занадто багато QR-кодів!"
         except ValueError:
             error = "Ви не в акаунті. Будь ласка, авторизуйтесь!"
     return render(request, "qrgenerate_app/index.html", context = {"qr_code": qr_code, "error": error})
