@@ -19,7 +19,7 @@
 {% block content %}
 <script src="{% static 'js/my_codes.js'%}" defer></script>
     <div class = "Screen">
-        <div class = "hat"; style="height: 136px; ">
+        <div class = "hat">
             <h1 class = "h1Generate">Мої <span class = "spanQR">QR</span>-коди</h1>
             <div class = "urls">
 
@@ -101,5 +101,19 @@
         </main>
     </div>
 
-    <script src="{% static 'js/my_codes.js'%}"></script>
+    <script >
+        const buttonsDelete = document.querySelectorAll(".button-delete");
+        for (let count = 0; count < buttonsDelete.length; count++) {
+            let buttonDelete = buttonsDelete[count];
+            buttonDelete.addEventListener("click", function (event) {
+                document.cookie = `qrcode=${buttonDelete.id}`;
+            });
+        }
+        const buttonsName = document.querySelectorAll(".qr-code-title");
+        for (let count = 0; count < buttonsName.length; count++) {
+            let buttonName = buttonsName[count];
+            buttonName.addEventListener("click", function (event) {
+                document.cookie = `specificQrcodeID=${buttonName.id}`;
+            });
+        }</script>
 {% endblock %}

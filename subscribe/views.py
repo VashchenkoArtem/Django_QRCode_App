@@ -1,10 +1,9 @@
 from django.shortcuts import render
 from .models import UserSubscribe
-from datetime import datetime
-from django.contrib.auth.models import User
+from django.http import  HttpRequest
 # Create your views here.
 
-def render_subscribe(request):
+def render_subscribe(request: HttpRequest):
     message = None
     if request.method == "POST":
         card_number = request.POST.get("card")
@@ -29,7 +28,7 @@ def render_subscribe(request):
                                             max_count_qrs = 1,   
                                             cvv_code = cvv_code                     
                                             )
-                message = "Підписка успішно змінена!"
+                message = "Підписка успішно змінена на Free!"
         if request.COOKIES["subscribeType"]  == "standart":
             if len(UserSubscribe.objects.filter(user_id =  request.user.id)) == 0:
                 UserSubscribe.objects.create(user_id = request.user.id,
@@ -49,7 +48,7 @@ def render_subscribe(request):
                                             max_count_qrs = 10,   
                                             cvv_code = cvv_code                     
                                             )
-                message = "Підписка успішно змінена!"
+                message = "Підписка успішно змінена на Standart!"
         if request.COOKIES["subscribeType"]  == "pro":
             if len(UserSubscribe.objects.filter(user_id =  request.user.id)) == 0:
                 UserSubscribe.objects.create(user_id = request.user.id,
@@ -69,6 +68,6 @@ def render_subscribe(request):
                                             max_count_qrs = 100,   
                                             cvv_code = cvv_code                     
                                             )
-                message = "Підписка успішно змінена!"
+                message = "Підписка успішно змінена на Pro!"
 
     return render(request, 'subscribe/subscribe.html', context = {"message":message})

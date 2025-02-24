@@ -2,9 +2,9 @@ from django.shortcuts import render, redirect
 import random
 from django.core.mail import send_mail
 from registration1.models import Code_Number
-
+from django.http import  HttpRequest
 # Create your views here.
-def render_authorithation2(request):
+def render_authorithation2(request: HttpRequest):
     error = ""
     try:
         if request.user.is_authenticated:

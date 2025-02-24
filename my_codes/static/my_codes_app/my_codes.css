@@ -4,11 +4,10 @@
     font-family: "Jost", sans-serif;
 }
 .Screen{
-    height: 100%;
-    width: 100%;
     background-image: url('/../static/images/bgForGenerate.png');
     background-color: #EDF4FC;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-attachment: fixed;
     gap: 15px;
 }
 .hat{
@@ -16,8 +15,8 @@
     height: 136px;
     display: flex;
     flex-direction: row;
-    gap: 150px;
 
+    gap: 150px;
 }
 .urls{
     width: 700px;

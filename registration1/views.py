@@ -4,11 +4,11 @@ from django.db.utils import IntegrityError
 from django.core.mail import send_mail
 from .models import Code_Number
 from django.contrib.auth import authenticate, login
-
+from django.http import  HttpRequest
 import random
 # Create your views here.
 random_number = 0
-def render_registration1(request):
+def render_registration1(request: HttpRequest):
     global random_number
     error = ""
     if request.method == "POST":

@@ -1,14 +1,15 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from qrgenerate_app.models import QR_Codes
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpRequest
 from django.contrib.auth.decorators import login_required
 from dateutil import parser
 from dateutil.relativedelta import relativedelta
 
+
 from subscribe.models import UserSubscribe
 @login_required
-def render_my_codes(request):
+def render_my_codes(request: HttpRequest):
     specific_qrcode = None
     date_expire = None
     date = None
@@ -27,7 +28,7 @@ def render_my_codes(request):
             except:
                 pass
         else:
-            try:
+            if request.COOKIES["specificQrcodeID"]:
                 specific_qrcode_id = request.COOKIES["specificQrcodeID"]
                 specific_qrcode = QR_Codes.objects.get(id = specific_qrcode_id)
                 date_parse = parser.parse(specific_qrcode.date_created, dayfirst=True)
@@ -36,8 +37,6 @@ def render_my_codes(request):
                 date = f"{date_expire_code.split(':')[0].split('-')[2].split(' ')[0]}.{date_expire_code.split(':')[0].split('-')[1].split(' ')[0]} {date_expire_code.split(':')[0].split(' ')[1]}:{date_expire_code.split(':')[1].split('-')[0].split(' ')[0]}"
 
 
-            except:
-                pass
     return render(request, "my_codes/my_codes.html", context = {
         "User": User.objects.all(),
         "QR_Codes": QR_Codes.objects.all(),

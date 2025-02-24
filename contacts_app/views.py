@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
-# Create your views here.
-def render_contacts(request):
+from django.http import  HttpRequest
+def render_contacts(request: HttpRequest):
     return render(request, 'contacts_app/contacts.html')

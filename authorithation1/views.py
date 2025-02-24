@@ -3,8 +3,9 @@ from django.contrib.auth import authenticate, login
 import random
 from registration1.models import Code_Number
 from django.contrib.auth.models import User
+from django.http import  HttpRequest
 # Create your views here.
-def render_authorithation1(request):
+def render_authorithation1(request: HttpRequest):
     error = ""
     if request.method == "POST":
         username = request.POST.get("name")

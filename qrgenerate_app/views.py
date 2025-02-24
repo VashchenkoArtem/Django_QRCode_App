@@ -19,8 +19,9 @@ from qrcode.image.styles.moduledrawers import (
 from qrcode.image.styles.colormasks import RadialGradiantColorMask
 from django.contrib.auth.decorators import login_required
 from subscribe.models import UserSubscribe
+from django.http import  HttpRequest
 # Create your views here.
-def hex_to_rgb(color):
+def hex_to_rgb(color: HttpRequest):
     color_rgb = color.lstrip('#')
     r = int(color_rgb[0:2], 16)
     g = int(color_rgb[2:4], 16)
@@ -29,7 +30,7 @@ def hex_to_rgb(color):
 
         
 @login_required
-def qr_generate_app(request):
+def qr_generate_app(request: HttpRequest):
     qr_code = None
     error = None
     if request.method == "POST":

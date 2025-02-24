@@ -32,8 +32,10 @@
                 <h1 class = "user-h1">{{request.user.username}}</h1>
             </div>
         </div>
+        <hr>
+        <h1 class = "title">На цьому сайті ви можете створити будь-які<br> qr-коди на ваш розсуд!</h1>
+        <hr>
         <div class = "subscribe">
-
             <div class = "subscribeFree">
                 <a class = "freeButton" href="{% url 'subscribe' %}">
                     <h1 class = "buttonFree" >Free</h1>
@@ -56,18 +58,34 @@
 
             <div class = "subscribePro">
                 <a class = "proButton" href="{% url 'subscribe' %}">
-                    <h1 class = "h1Pro">Pro</h1>
+                    <h1 class = "h1Pro">Pro</h1>    
                 </a>
                 
                 <h1 class = "descriptionPro">10$ на місяць До 100 <br>QR-кодів</h1>
             </div>
-            
-        </div>
-        <div class = "generateButton">
-            <div class = "bgGenerateButton">
-                <a href = "/codes/qrgenerate/" class = "h1GenerateButton">Згенерувати QR-код</a>
+            <div class = "secondRow">
+                <div class="subscribeDesktop">
+                    <a href="{% url 'subscribe' %}" class="desktopButton">
+                        <h1 class="h1Desktop">Desktop</h1>
+                    </a>
+
+                    <h1 class="descriptionDesktop"><ul>
+                        <li>5 QR-кодів</li>
+                        <li>10 QR-кодів</li>
+                        <li>20 QR-кодів</li>
+                    </ul>
+                </h1>
+
+                </div>
+                <div class = "lineAfterDesktop"></div>
+                <div class = "generateButton">
+                    <div class = "bgGenerateButton">
+                        <a href = "/codes/qrgenerate/" class = "h1GenerateButton">Згенерувати QR-код</a>
+                    </div>
+                </div>
             </div>
         </div>
+
         <div class = "contacts">
             <div class = "allIcons">
                 <a href="{% url 'contacts' %}">
