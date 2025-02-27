@@ -13,6 +13,8 @@
     background-size: 100% 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hat{
@@ -21,6 +23,9 @@
     display: flex;
     flex-direction: row;
     gap: 180px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
 }
 .h1Generate{
     width: 390px;
@@ -33,13 +38,13 @@
     color: #FF9334;
 }
 .urls{
-    width: 649px;
+    width: 700px;
     height: 58px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 50px;
-    padding-top: 50px;
+    gap: 40px;
+    padding-top: 60px;
 }
 a{
     text-decoration: none;
@@ -59,6 +64,13 @@ a{
     justify-content: center;
     font-weight: bold;
     border: black solid 1px;
+    margin-left: -8px;
+}
+.mainPage{
+    margin-left: -15px;
+}
+.registration{
+    margin-left: 9px;
 }
 .mainPage{
     color: black;
@@ -67,8 +79,9 @@ a{
 .spanQR{
     color: #FF9334;
 }
-
-/* Форма */
+.codes{
+    margin-left: 30px;
+}
 
 .emailImgFrame{
     width: 92px;
@@ -225,7 +238,11 @@ a{
     order: 3;
     flex-grow: 0;
 }
-
+.under-button-frame:hover{
+    cursor: pointer;
+    background-color: #c4c4c428;
+    color: #53a96a;
+}
 .text-button{
     height: 22px;
     font-family: 'Jost';

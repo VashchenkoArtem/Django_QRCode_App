@@ -25,9 +25,10 @@
                     <a href="{% url 'my_codes' %}" class = "MyQRCodesPage" >Мої QR-коди</a>
                     <a href = "{% url 'logout' %}"class = "logout-button">Вийти з акаунту</a>
                 {% else %}
+                    <a href="/codes/my_codes/" class = "" >Мої QR-коди</a>    
                     <a href="{% url 'registration1' %}" class = "registrationPage">Реєстрація</a>
                     <a href="{% url 'authorithation1' %}"class = "authorizationPage">Авторизація</a>
-                    <a href="/codes/my_codes/" class = "" >Мої QR-коди</a>
+                    
                 {% endif %}
                 <h1 class = "user-h1">{{request.user.username}}</h1>
             </div>
@@ -39,19 +40,20 @@
                     <h1 class = "subscribe-type">{{message}}</h1>
                     <a class = "url-home" href="{% url 'home_app'%}">На головну</a>
                 </div>
-            </div >
-        {% endif%}
+            </div>
+        {% endif %}
         <form method="post" class = "subscribe-form">
             {% csrf_token%}
             <div class = "form"> 
                     <h1 class = "subscribe-buy">Оформлення підписки</h1>    
                     <div class = "form-inputs">
 
-                            <div class = "input-number">
-                                <h1 class = "number-text">Номер платіжної карти</h1>
-                                <input  class = "number-input" name = "card" type="text">
-                                <h1 class = "number-clue">Наприклад: 1234 5678 9012 3456</h1>
-                            </div>
+                        <div class = "input-number">
+                            <h1 class = "number-text">Номер платіжної карти</h1>
+                            <input  class = "number-input" name = "card" type="text">
+                            <h1 class = "number-clue">Наприклад: 1234 5678 9012 3456</h1>
+                        </div>
+
                         <div class = "input-cvv">
                             <h1 class = "cvv-text">CVV/CVC код</h1>
                             <input class = "cvv-input" name = "cvv" type="password">
@@ -62,6 +64,16 @@
                             <input class = "expiration-input" name = "date" type="month">
                             <h1 class = "expiration-clue">Наприклад: 12/24</h1>
                         </div>
+                        {% if subscribe_desktop%}
+                            <div class = "count-input">
+                                <h1 class = "count-qrs">Кількість QR-кодів</h1>
+                                <select name="count" class = "input-count">
+                                    <option value="5">5 QR-кодів(0.5$)</option>
+                                    <option value="10">10 QR-кодів(1$)</option>
+                                    <option value="20">20 QR-кодів(2$)</option>
+                                </select>
+                            </div>
+                        {% endif %}
                     </div>
                     <div class = "subscribe-button" >
                         <button class = "button" id = "button" type="submit">Оформити підписку</button>

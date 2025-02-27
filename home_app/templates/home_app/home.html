@@ -25,16 +25,15 @@
                     <a href="{% url 'my_codes' %}" class = "MyQRCodesPage" >Мої QR-коди</a>
                     <a href = "{% url 'logout' %}"class = "logout-button">Вийти з акаунту</a>
                 {% else %}
+                    <a href="/codes/my_codes/" class = "MyQRCodesPage" >Мої QR-коди</a>
                     <a href="/registration/informationabout/" class = "registrationPage">Реєстрація</a>
                     <a href="/authorithation/logininformation/"class = "authorizationPage">Авторизація</a>
-                    <a href="/codes/my_codes/" class = "MyQRCodesPage" >Мої QR-коди</a>
+
                 {% endif %}
                 <h1 class = "user-h1">{{request.user.username}}</h1>
             </div>
         </div>
-        <hr>
-        <h1 class = "title">На цьому сайті ви можете створити будь-які<br> qr-коди на ваш розсуд!</h1>
-        <hr>
+
         <div class = "subscribe">
             <div class = "subscribeFree">
                 <a class = "freeButton" href="{% url 'subscribe' %}">
@@ -43,7 +42,6 @@
 
                 <h1 class = "descritpionFree">Безкоштовно Один QR-код на 6 місяців</h1>
             </div>
-
             <div class = "lineBetweenFreeAndStandart"></div>
             
             <div class = "subscribeStandart">

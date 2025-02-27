@@ -8,13 +8,11 @@ from dateutil.relativedelta import relativedelta
 
 
 from subscribe.models import UserSubscribe
-@login_required
 def render_my_codes(request: HttpRequest):
     specific_qrcode = None
     date_expire = None
     date = None
     delete = None
-
     if request.method == "POST":
 
         if request.POST.get("button-delete") is not None:
@@ -40,6 +38,7 @@ def render_my_codes(request: HttpRequest):
     return render(request, "my_codes/my_codes.html", context = {
         "User": User.objects.all(),
         "QR_Codes": QR_Codes.objects.all(),
+        "current_user": request.user,
         "specific_qrcode": specific_qrcode,
         "date_expired": date,
         "delete": delete,

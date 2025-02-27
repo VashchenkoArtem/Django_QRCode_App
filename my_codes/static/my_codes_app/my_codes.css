@@ -9,14 +9,20 @@
     background-size: cover;
     background-attachment: fixed;
     gap: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .hat{
     width: 100%;
     height: 136px;
     display: flex;
     flex-direction: row;
-
-    gap: 150px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 180px;
 }
 .urls{
     width: 700px;
@@ -46,6 +52,9 @@ a{
     font-size: 20px;
 
 }
+.registrationPage{
+    margin-left: -15px;
+}
 .MyQRCodesPage{
     display: flex;
     flex-direction: row;
@@ -57,18 +66,24 @@ a{
     align-items: center;
     justify-content: center;
     border: black solid 1px;
+    margin-left: 4px;
 }
 .mainPage{
     color: black;
     opacity: 100%;
 }
+main{
+    width: 100%;
+}
 .codes{
-    max-width: 100%;
+    width: 100%;
     height: 506px;
     display: flex;
     gap: 60px;
     flex-wrap: wrap;
     overflow-y: scroll;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .contacts{
@@ -100,7 +115,9 @@ a{
     width: 269px; 
     height: 321px; 
 } 
- 
+.logout-button{
+    margin-left: -15px;
+}
 .qr-code{ 
     width: 234px; 
     height: 265px;   
@@ -191,7 +208,6 @@ span{
     display: flex;
     flex-direction: column;
 }
-
 .specific-url{
     font-size: 20px;
 }

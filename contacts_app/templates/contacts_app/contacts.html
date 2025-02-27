@@ -23,13 +23,14 @@
                     <a href = "{% url 'home_app'%}" class = "mainPage">Головна</a>
                 </div>
                 {% if request.user.is_authenticated %}
-                <h1 class = "user-h1">{{request.user.username}}</h1>
-                <a href="{% url 'my_codes' %}" class = "MyQRCodesPage" >Мої QR-коди</a>
-                <a href = "{% url 'logout' %}"class = "logout-button">Вийти з акаунту</a>
+                    <h1 class = "user-h1">{{request.user.username}}</h1>
+                    <a href="{% url 'my_codes' %}" class = "MyQRCodesPage" >Мої QR-коди</a>
+                    <a href = "{% url 'logout' %}"class = "logout-button">Вийти з акаунту</a>
                 {% else %}
+                    <a href="/codes/my_codes/" class = "MyQRCodesPage" >Мої QR-коди</a>    
                     <a href="/registration/informationabout/" class = "registrationPage">Реєстрація</a>
                     <a href="/authorithation/logininformation/"class = "authorizationPage">Авторизація</a>
-                    <a href="/codes/my_codes/" class = "MyQRCodesPage" >Мої QR-коди</a>
+                    
                 {% endif %}
                 </div>
             </div>

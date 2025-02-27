@@ -13,6 +13,8 @@
     background-size: 100% 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -20,6 +22,9 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
 }
 .h1Generate{
     width: 390px;
@@ -32,13 +37,13 @@
     color: #FF9334;
 }
 .urls{
-    width: 649px;
+    width: 700px;
     height: 58px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 50px;
-    padding-top: 50px;
+    gap: 40px;
+    padding-top: 60px;
 }
 a{
     text-decoration: none;
@@ -57,7 +62,7 @@ a{
     justify-content: center;
     border: black solid 1px;
     font-weight: bold;
-
+    margin-left: -14px;
 }
 .mainPage{
     color: black;
@@ -66,9 +71,13 @@ a{
 .spanQR{
     color: #FF9334;
 }
-
+.autorithation{
+    margin-left: -14px;
+}
 /* Форма авторизації */
-
+.my-codes{
+    margin-left: 31px;
+}
 .registration-form{
     display: flex;
     flex-direction: row;
@@ -243,7 +252,11 @@ a{
     flex-grow: 0;
     padding-left: 72px;
 }
-
+.under-button-frame:hover{
+    cursor: pointer;
+    background-color: #c4c4c428;
+    color: #53a96a;
+}
 .text-button{
     height: 22px;
     font-family: 'Jost';

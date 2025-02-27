@@ -3,19 +3,22 @@
 
 {% block link %}
     <link rel="stylesheet" href="{% static 'authorithation3/authorithation3.css' %}">
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'authorithation2/authorithation2.css' %}">
 {% endblock %}
 {% block content %}
     <div class = "Screen">
-        <div class = "hat"; style="height: 136px; ">
+        <div class = "hat"; style="height: 136px; gap:222px;">
             <h1 class = "h1Generate">Авторизація</h1>
             <div class = "urls">
                 <div class = "mainUrl">
-                    <a href = "{% url 'home_app' %}" class = "mainPage">Головна</a>
+                    <a href = "{% url 'home_app' %}" class = "mainPage" style="margin-left:-10px">Головна</a>
                 </div>
+                <a href="{% url 'my_codes' %}" class = "my-codes">Мої QR-коди</a>
+                <a href="{% url 'registration1' %}" class = "registration">Реєстрація</a>
+                <a href="{% url 'authorithation1' %}"class = "MyQRCodesPage">Авторизація</a>
 
-                <a href="{% url 'registration1' %}" >Реєстрація</a>
-                <a href="{% url 'authorithation3' %}"class = "MyQRCodesPage">Авторизація</a>
-                <a href="{% url 'my_codes' %}">Мої QR-коди</a>
             </div>
         </div>
         <div class="registration-form">

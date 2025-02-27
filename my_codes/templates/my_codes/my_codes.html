@@ -31,9 +31,10 @@
                     <a href = "{% url 'logout' %}"class = "logout-button">Вийти з акаунту</a>
 
                 {% else %}
+                    <a href="/codes/my_codes/" class = "MyQRCodesPage" >Мої QR-коди</a>    
                     <a href="{% url 'registration1' %}" class = "registrationPage">Реєстрація</a>
                     <a href="{% url 'authorithation1' %}"class = "authorizationPage">Авторизація</a>
-                    <a href="/codes/my_codes/" class = "MyQRCodesPage" >Мої QR-коди</a>
+                    
                 {% endif %}
                 <h1 class = "user-h1">{{request.user.username}}</h1>
             </div>
@@ -64,30 +65,32 @@
                     </form>
                 {% endif %}
                 {% for user in User %}
-                    {% for qrcode in QR_Codes %}
-                        {% if user.id == qrcode.user_id %}
-                            <div class="bg-qr-сode">
-                                <div class="qr-code">
-                                    <form method="post" class = "form1">
-                                        {% csrf_token%}
-                                        <img src="/media/{{qrcode.image}}" alt="" class="qr-code-img">
-                                        <button class = "qr-code-title" type = "submit" id = "{{qrcode.id}}">{{qrcode.name}}</button>
-                                        <h2 class = "qr-code-date"><span>Дата створення: <br> </span>{{qrcode.date_created}}</h2>
-                                    </form>
-                                    <form method = "post" class = "form2">
-                                        {% csrf_token%}
-                                        <div class = "buttons-download-delete">
-                                        <a class = "qr-code-button" type="submit" href = "/media/qr_codes/{{user.username}}/{{qrcode.name}}.png" download="{{qrcode.name}}.png">Скачати</a>
-                                        <button class="button-delete" id="{{qrcode.id}}">
-                                                    <img class = "bin-image"src="{% static 'images/bin.png' %}" alt="">
-                                        </button>
-                                        <input type="hidden" name="button-delete">
-                                        </div>
-                                    </form>
+                    {% if user.id == current_user.id %}
+                        {% for qrcode in QR_Codes %}
+                            {% if user.id == qrcode.user_id %}
+                                <div class="bg-qr-сode">
+                                    <div class="qr-code">
+                                        <form method="post" class = "form1">
+                                            {% csrf_token%}
+                                            <img src="/media/{{qrcode.image}}" alt="" class="qr-code-img">
+                                            <button class = "qr-code-title" type = "submit" id = "{{qrcode.id}}">{{qrcode.name}}</button>
+                                            <h2 class = "qr-code-date"><span>Дата створення: <br> </span>{{qrcode.date_created}}</h2>
+                                        </form>
+                                        <form method = "post" class = "form2">
+                                            {% csrf_token%}
+                                            <div class = "buttons-download-delete">
+                                            <a class = "qr-code-button" type="submit" href = "/media/qr_codes/{{user.username}}/{{qrcode.name}}.png" download="{{qrcode.name}}.png">Скачати</a>
+                                            <button class="button-delete" id="{{qrcode.id}}">
+                                                        <img class = "bin-image"src="{% static 'images/bin.png' %}" alt="">
+                                            </button>
+                                            <input type="hidden" name="button-delete">
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                 {% endfor %}
 
             </div>

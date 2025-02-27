@@ -16,6 +16,7 @@ def render_registration1(request: HttpRequest):
         email = request.POST.get("email")
         password = request.POST.get("password")
         confirm_password = request.POST.get("confirm-password")
+        
         if password == confirm_password:           
             try:
                 User.objects.create_user(username= name, email= email, password= password)

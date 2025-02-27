@@ -173,7 +173,14 @@ a{
     margin-top: 27px;
     margin-left: 27px;
 }
-
+.count-input{
+    margin-top: 15px;
+}
+.count-qrs{
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: normal;
+}
 .expiration-text{
     font-size: 20px;
     color: rgba(0, 0, 0, 0.5);
@@ -196,6 +203,7 @@ a{
 }
 
 .subscribe-button{
+    margin-top: 30px;
     width: 393px;
     height: 92px;
     text-align: center;
@@ -204,6 +212,7 @@ a{
     justify-content: center;
     align-items: center;
 }
+
 button{
     width: 226px;
     height: 54px;
@@ -213,7 +222,11 @@ button{
     color: rgba(87, 238, 127, 1);
     font-size: 20px;
 }
-
+button:hover{
+    cursor: pointer;
+    background-color: #c4c4c428;
+    color: #68d184;
+}
 .contacts{
     width: 100%;
     height: 79px;
