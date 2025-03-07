@@ -1,11 +1,26 @@
 from django.shortcuts import render
 from .models import UserSubscribe
 from django.http import  HttpRequest
+import datetime
+from dateutil.relativedelta import relativedelta
 # Create your views here.
 
 def render_subscribe(request: HttpRequest):
     message = None
     subscribe_desktop = None
+    date_now = datetime.datetime.now()
+    date_month_next = date_now + relativedelta(months = 1)
+    try:
+        if date_now > date_month_next:
+            user_subscribe = UserSubscribe.objects.get(user = request.user)
+            user_subscribe.is_working = False
+            user_subscribe.save()
+        elif date_now < date_month_next:
+            user_subscribe = UserSubscribe.objects.get(user = request.user)
+            user_subscribe.is_working = True
+            user_subscribe.save()      
+    except:
+        pass
     if request.method == "POST":
         card_number = request.POST.get("card")
         cvv_code = request.POST.get("cvv")
@@ -18,7 +33,8 @@ def render_subscribe(request: HttpRequest):
                                                 card_number = card_number,
                                                 date_expired = expiration_date,
                                                 max_count_qrs = 1,   
-                                                cvv_code = cvv_code                     
+                                                cvv_code = cvv_code,
+                                                date_expired_subscribe = date_month_next                   
                                                 )
                     message = "Задана підписка Free!"
                 else:
@@ -28,7 +44,8 @@ def render_subscribe(request: HttpRequest):
                                                 card_number = card_number,
                                                 date_expired = expiration_date,
                                                 max_count_qrs = 1,   
-                                                cvv_code = cvv_code                     
+                                                cvv_code = cvv_code,
+                                                date_expired_subscribe = date_month_next                   
                                                 )
                     message = "Підписка успішно змінена на Free!"
             if request.COOKIES["subscribeType"]  == "standart":
@@ -38,7 +55,8 @@ def render_subscribe(request: HttpRequest):
                                                 card_number = card_number,
                                                 date_expired = expiration_date,
                                                 max_count_qrs = 10,   
-                                                cvv_code = cvv_code                     
+                                                cvv_code = cvv_code ,
+                                                date_expired_subscribe = date_month_next                      
                                                 )
                     message = "Задана підписка Standart!"
                 else:
@@ -48,7 +66,8 @@ def render_subscribe(request: HttpRequest):
                                                 card_number = card_number,
                                                 date_expired = expiration_date,
                                                 max_count_qrs = 10,   
-                                                cvv_code = cvv_code                     
+                                                cvv_code = cvv_code,
+                                                date_expired_subscribe = date_month_next                       
                                                 )
                     message = "Підписка успішно змінена на Standart!"
             if request.COOKIES["subscribeType"]  == "pro":
@@ -58,7 +77,8 @@ def render_subscribe(request: HttpRequest):
                                                 card_number = card_number,
                                                 date_expired = expiration_date,
                                                 max_count_qrs = 100,   
-                                                cvv_code = cvv_code                     
+                                                cvv_code = cvv_code,
+                                                date_expired_subscribe = date_month_next                       
                                                 )
                     message = "Задана підписка Pro!"
                 else:
@@ -68,7 +88,8 @@ def render_subscribe(request: HttpRequest):
                                                 card_number = card_number,
                                                 date_expired = expiration_date,
                                                 max_count_qrs = 100,   
-                                                cvv_code = cvv_code                     
+                                                cvv_code = cvv_code,
+                                                date_expired_subscribe = date_month_next                       
                                                 )
                     message = "Підписка успішно змінена на Pro!"
         except:
@@ -88,7 +109,8 @@ def render_subscribe(request: HttpRequest):
                         card_number = card_number,
                         date_expired = expiration_date,
                         max_count_qrs = count_qrs,   
-                        cvv_code = cvv_code  
+                        cvv_code = cvv_code,
+                        date_expired_subscribe = date_month_next    
                     )
                     message = "Задана підписка Desktop!"
                 else:
@@ -99,7 +121,8 @@ def render_subscribe(request: HttpRequest):
                         card_number = card_number,
                         date_expired = expiration_date,
                         max_count_qrs = count_qrs,   
-                        cvv_code = cvv_code  
+                        cvv_code = cvv_code,
+                        date_expired_subscribe = date_month_next   
                     )
                     message = "Підписка успішно замінена на Desktop!"
     except:

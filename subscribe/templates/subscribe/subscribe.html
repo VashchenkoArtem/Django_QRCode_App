@@ -34,8 +34,11 @@
             </div>
         </div>
         {% if message %}
+            <div class = "bg"></div>
             <div class="form-qr">
+
                 <div class="qr-objects">
+                    <img src="{% static 'images/close.png'%}" class = "close-button" alt="">
                     <h1 class = "h1-vitannya">Вітаємо!</h1>
                     <h1 class = "subscribe-type">{{message}}</h1>
                     <a class = "url-home" href="{% url 'home_app'%}">На головну</a>
@@ -46,6 +49,7 @@
             {% csrf_token%}
             <div class = "form"> 
                     <h1 class = "subscribe-buy">Оформлення підписки</h1>    
+
                     <div class = "form-inputs">
 
                         <div class = "input-number">

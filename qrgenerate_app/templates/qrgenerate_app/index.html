@@ -14,7 +14,7 @@
 {% block content%}
     <div class = "screen">
             <div class = "hat">
-                <h1 class = "h1Generate">Генерування <span class = "spanQR"> QR</span>-кода</h1>
+                <h1 class = "h1Generate">Генерація <span class = "spanQR"> QR</span>-кода</h1>
                 <div class = "urls">
 
                     <div class = "mainUrl">
@@ -37,9 +37,10 @@
             {% if error %}
                 <div class="form-qr">
                     <div class="qr-objects">
+                        <img src="{% static 'images/close.png'%}" class = "close-button" alt="">
                         <h1 class = "error">{{error}}</h1>
                     </div>
-                </div >
+                </div>
             {% endif%}
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
@@ -47,9 +48,9 @@
                     <div class="form">
                         {% if error %}
                             <div class="form-form"> 
-                                    <label class="qr-name">Назва QR-кода</label>
-                                    <input class="qr-name-example" type ="text" name = "name" required>
-                                    <h5 class="qr-under">Наприклад: Figma QR</h5>
+                                <label class="qr-name">Назва QR-кода</label>
+                                <input class="qr-name-example" type ="text" name = "name" required>
+                                <h5 class="qr-under">Наприклад: Figma QR</h5>
                             </div>
                         {% else %}
                             <div class="form-form1"> 
@@ -95,7 +96,7 @@
                                 <button class="create-qr" type="submit" >Створити QR</button>
                         </div>
                     </div>
-                    {% if qr_code  %}
+                    {% if qr_code.image  %}
                         <img class= "qr-code" src="{{ qr_code.image.url}}" alt="">
                     {% else %}
                         <div class="qr-code"></div>

@@ -9,5 +9,7 @@ class UserSubscribe(models.Model):
     cvv_code = models.SmallIntegerField(null=True)
     date_confirmed = models.DateField(auto_now_add=True)
     date_expired = models.CharField(max_length = 20)
+    date_expired_subscribe = models.DateField(null = True)
     max_count_qrs = models.SmallIntegerField(null= True)
+    is_working = models.BooleanField(default=True)
     
