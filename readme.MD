@@ -104,17 +104,29 @@ cd Django_QRCode_App
 pip install -r requirements.txt
 ```
 8. **Виходимо** з консолі, **натиснувши** стрілочку наліво в лівому верхньому кутi та **заходимо** у вкладку **Web**
-![alt text](images_readme/Web.png)
 9. Створюємо додаток натиснувши на кнопку **Add a new app** і далі **натискаємо** на **Next**
 ![](images_readme/newweb.png)
-10. **Обираємо** framework **Django** і натискаємо **Next**
+10.  **Обираємо** framework **Django** і натискаємо **Next**
 ![](images_readme/framework.png)
-11.  **Обираємо** версію **Python 3.10** і натискаємо **Next**
+11.   **Обираємо** версію **Python 3.10** і натискаємо **Next**
 ![](images_readme/Version.png)
-12. Вказуємо **назву сайта** та в **директорії** вказуємо:
+12.  Вказуємо **назву сайта** та в **директорії** вказуємо:
 ```python
 /home/<YourName>/Django_QRCode_App
 ``` 
+13. **Прогортаємо** трохи нижче та знаходимо **Working directory** і **натискаємо** на деректорію, яка знаходиться трохи **правіше**
+![](images_readme/Web.png)
+14.  **Змінюємо** деректорію на:
+```
+/home/<YourAcountName>/Django_QRCode_App
+```
+15.   Нижче **знаходимо WSGI configuration file** і **натискаємо** на посилання **правіше**
+![](images_readme/WSGI.png)
+16.   **16 рядок** кода **змінюємо** на:
+```
+from project.settings import project_login as application
+```
+
 ## Структура проєкта \ Structure of project
 ![](images_readme/structure.png)
 
