@@ -56,11 +56,11 @@ git clone https://github.com/VashchenkoArtem/Django_QRCode_App
 python -m venv <namevenv>
 ```
 6. **Активуйте** його \ **Activate** it:
-##  MacOS та Linux
+###  MacOS та Linux
 ```python
 source <namevenv>/bin/activate
 ```
-## Windows 
+### Windows 
 ```python
 .\<namevenv>\Scripts\activate.bat
 ```
@@ -82,6 +82,39 @@ python manage.py runserver
 
 11.  Вітаємо! Ви **локально** **запустили** проєкт! \\ Congratulations! You have **locally** **launched** the project!
 
+## Як запустити проєкт на pythonanywhere? \ How to run a project at pythonanywhere?
+1. **Перейти** на **сайт** pythonanywhere
+2. **Зареєструватися** там, якщо ще не зареєстровані
+3. **Створюємо** нову **bash** консоль
+![alt text](images_readme/bash.png)
+4. **Клонуємо** репозиторій. Прописуємо в консолі:
+```
+git clone https://github.com/VashchenkoArtem/Django_QRCode_App
+```
+5. **Створюємо** віртуальне оточення
+```
+mkvirtualenv <venv_name> --python=python3.10
+```
+6. Переходимо в дерикторію проєкта:
+```python
+cd Django_QRCode_App
+```
+7. **Встановлюємо** всі необхідні модулі
+```
+pip install -r requirements.txt
+```
+8. **Виходимо** з консолі, **натиснувши** стрілочку наліво в лівому верхньому кутi та **заходимо** у вкладку **Web**
+![alt text](images_readme/Web.png)
+9. Створюємо додаток натиснувши на кнопку **Add a new app** і далі **натискаємо** на **Next**
+![](images_readme/newweb.png)
+10. **Обираємо** framework **Django** і натискаємо **Next**
+![](images_readme/framework.png)
+11.  **Обираємо** версію **Python 3.10** і натискаємо **Next**
+![](images_readme/Version.png)
+12. Вказуємо **назву сайта** та в **директорії** вказуємо:
+```python
+/home/<YourName>/Django_QRCode_App
+``` 
 ## Структура проєкта \ Structure of project
 ![](images_readme/structure.png)
 
