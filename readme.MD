@@ -19,6 +19,9 @@ QR Code Generator is a project that was created to create customized QR codes th
 - **Contact** the developers
 - **Set** and **change** a subscription
 
+## Ціль проєкта
+Нашою **ціллю** було **створення зручного генераторат QR-кодів**, де людина може **обрати** будь-яку **кастомізацію**
+
 ## Над цим проєктом працювали/They worked on the project:
 **Ващенко Артем(TeamLead)**: https://github.com/VashchenkoArtem
 **Кирило Харлан**: https://github.com/KirillKharlan
@@ -81,51 +84,6 @@ python manage.py runserver
 ![](images_readme/run_server.png)
 
 11.  Вітаємо! Ви **локально** **запустили** проєкт! \\ Congratulations! You have **locally** **launched** the project!
-
-## Як запустити проєкт на pythonanywhere? \ How to run a project at pythonanywhere?
-1. **Перейти** на **сайт** pythonanywhere
-2. **Зареєструватися** там, якщо ще не зареєстровані
-3. **Створюємо** нову **bash** консоль
-![alt text](images_readme/bash.png)
-4. **Клонуємо** репозиторій. Прописуємо в консолі:
-```
-git clone https://github.com/VashchenkoArtem/Django_QRCode_App
-```
-5. **Створюємо** віртуальне оточення
-```
-mkvirtualenv <venv_name> --python=python3.10
-```
-6. Переходимо в дерикторію проєкта:
-```python
-cd Django_QRCode_App
-```
-7. **Встановлюємо** всі необхідні модулі
-```
-pip install -r requirements.txt
-```
-8. **Виходимо** з консолі, **натиснувши** стрілочку наліво в лівому верхньому кутi та **заходимо** у вкладку **Web**
-9. Створюємо додаток натиснувши на кнопку **Add a new app** і далі **натискаємо** на **Next**
-![](images_readme/newweb.png)
-10.  **Обираємо** framework **Django** і натискаємо **Next**
-![](images_readme/framework.png)
-11.   **Обираємо** версію **Python 3.10** і натискаємо **Next**
-![](images_readme/Version.png)
-12.  Вказуємо **назву сайта** та в **директорії** вказуємо:
-```python
-/home/<YourName>/Django_QRCode_App
-``` 
-13. **Прогортаємо** трохи нижче та знаходимо **Working directory** і **натискаємо** на деректорію, яка знаходиться трохи **правіше**
-![](images_readme/Web.png)
-14.  **Змінюємо** деректорію на:
-```
-/home/<YourAcountName>/Django_QRCode_App
-```
-15.   Нижче **знаходимо WSGI configuration file** і **натискаємо** на посилання **правіше**
-![](images_readme/WSGI.png)
-16.   **16 рядок** кода **змінюємо** на:
-```
-from project.settings import project_login as application
-```
 
 ## Структура проєкта \ Structure of project
 ![](images_readme/structure.png)
@@ -213,3 +171,91 @@ from project.settings import project_login as application
 ### Файл requirements.txt \ Requirements.txt file
 
 В цьому **файлі** ми **створили** всі **необхідні** **бібліотеки** та їх **версії** для **запуску проєкта**. \ In this **file** we **created** all the **necessary** **libraries** and their **versions** to **launch the project**.
+
+## Приклад створення django-проєкта \ Example of creating a django-project
+1. **Встановіть віртуальне оточення** \ **Set venv**
+2. **Активуйте** його \ **Activate** it
+3. **Встановіть** в нього **бібліотеку django**: \ **Install** the **django library** into it:
+```python
+pip install django
+```
+4. **Створіть проєкт**: \ **Create project**
+```python
+python django-admin startproject <project_name>
+```
+5. Це **все**, що **потребується** для **створення** звичайного **проєкта**. Але, якщо ви будете **працювати** з **media-файлами** - вам **необхідно створити** нові **константи** для **налаштування** у файлі **settings.py** \ This is **all** that is **needed** to **create** a regular **project**. But, if you **will** be **working** with **media files** - you **need** to create** new **constants** for **settings** in the **settings.py** file
+```python
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+```
+6. Вітаємо! Ви **створили** проєкт! Тепер, давайте **перейдемо** до **створення додатків**. \ Congratulations! You **created** a project! Now, let's **move** to **building apps**.
+
+## Приклад створення додатку \ Example of creating application
+
+1. У вас **повинен** бути **django-проєкт**. Якщо **нема** - **створіть** його. \ You **must** have a **django project**. If you **don't** have one, **create** one.
+2. **Пропишіть** в **терміналі**: \ **Write** in **terminal**:
+```python
+python manage.py startapp <application_name>
+```
+Ви **обов'язково** повинні **находитись** в **дерикторії проєкта**. \ You **must** be **located** in the **project directory**.
+3. У вас **створився** **додаток**. Давайте **налаштуємо** його: \ You have **created** an **application**. Let's **configure** it:
+- **Перейдіть** в **settings.py** та **знайдіть** там **константу INSTALLED_APPS**. **В кінці додайте назву** свого **додатку**: \ **Go** to **settings.py** and **find** the **INSTALLED_APPS** constant there. **At the end, add the name** of your **application**:
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'your_application_name'
+]
+```
+- У **додатку**, **створіть** папку **templates** та в ній ще одну **папку**** з назвою додатку**, а в ній вже **html-шаблон**. Тобто, ваша **дерикторія**, **починаючи** з **templates** повинна **виглядати** так: \ In the **application**, **create** a **templates** folder and in it another **folder**** with the name of the application**, and in it an **html template**. That is, your **directory**, **starting** with **templates** should **look** like this:
+```html
+templates/<your_application_name>/index.html
+```
+- **Створіть** необхідну **структуру** в **html-документі** \ **Create** the required **structure** in the **html document**
+- У файлі **views.py створіть функцію відображення** сторінки з **назвою**, наприклад: **render_home_page**. Вона **приймає необхідний параметр request**. Якщо хочете, щоб у вас **відображалися** **підказки** у цій функції - вам необхідно **уточнити параметр request**. Для цього вам необхідно **імпортувати** з **django.http HttpRequest**: \ In the **views.py file, create a function to render** the page with a **name**, for example: **render_home_page**. It **accepts the required request** parameter. If you want to **display** **tooltips** in this function - you need to **specify the request** parameter. To do this, you need to **import** from **django.http HttpRequest**:
+```python
+from django.http import HttpRequest
+
+
+def render_home_page(request: HttpRequest):
+```
+- Після цього, **повертаємо** в функції **відображену сторінку**, завдяки методу **render**. У нього є **2 необхідних параметра**. **Перший** параметр - **request**, а **другий** параметр - **шлях до html-шаблона**, починаючи від папки **templates**: \ After that, we **return** the **rendered page** to the function, thanks to the **render** method. It has **2 required parameters**. The **first** parameter is **request**, and the **second** parameter is **the path to the html template**, starting from the **templates** folder:
+```python
+    return render(request, template_name = "<name_folder_in_templates>/index.html")
+```
+- Тепер, нам необхідно **додати** цій функції відображення **url**. Але тут є **2** способи: \ Now, we need to **add** this **url** mapping function. But there are **2** ways:
+### I Спосіб (створення посилання у головному url) \ Method I (creating a link in the main url)
+1. **Заходимо** в urls.py проєкта \ **Go** to the project's urls.py
+2. **Імпортуємо** сюди нашу **функцію відображення**: \ **Import** our **map function** here:
+```python
+from <name_application>.views import <name_render>
+```
+3. **Додаємо** нове **посилання** в **urlpatterns**, завдяки методу **path** \ **We** add a new **link** to **urlpatterns**, thanks to the **path** method
+```python
+    path("/Adress/", <name_render>)
+```
+В цьому випадку, **перший** параметр - **адреса посилання**, а **другий** параметр - **функція відображення** \ In this case, the **first** parameter is the **link address**, and the **second** parameter is the **display function**
+### II Спосіб (створення посилання у власному urls.py) \ Method II (creating a link in your own urls.py)
+Якщо ви в майбутньому **збираєтесь** робити ще **посилання**, які **однакові** з цим - вам краще **зробити** **ще один urls.py**, щоб **не повторювати адреси** \ If you **are** going to make more **links** that are **the same** as this one in the future - you'd better **make** **another urls.py** to **not repeat addresses**.
+1. **Створіть** у **додатку** **власний urls.py** \ **Створіть** у **додатку** **власний urls.py**
+2. В ньому **імпортуйте** ті ж методи **django**, які **імпортовані** в **головному** urls.py \ In it, **import** the same **django** methods that are **imported** in **main** urls.py.
+3. **Створіть** такий ж об'єкт **urlpatterns** та **створіть** в ньому **посилання**: \ **Create** the same **urlpatterns** object and **create** a **link** in it:
+```python
+urlpatterns = [
+    path("/Adress/", <name_render>)
+]
+```
+4. **Переходимо** в **головний** urls.py та разом з **функцією path імпортуємо include** \ **Go** to **main** urls.py and import include** along with **path function**
+5. **Робимо посилання**, яке при **наявності** в **адресі** вказаного **url** буде **включати** в себе **інші посилання** за цією **адресою** \ **We create a link** that, if the specified **url** is present in the **address**, will **include** other links** at this **address**
+```python
+path("Adress1/", include("<path_to_urls.py>"))
+```
+В цьому випадку, якщо користувач **перейде** за **адресою** Adress1, то у нього **буде** **вибір** **перейти** на ішні **адреси**, які ми **вказали** **в власному urls.py** \ In this case, if the user **goes** to **address** Adress1, then he **will** have the **choice** to **go** to other **addresses** that we **specified** **in our own urls.py**
+- Вітаємо! Ви **створили** особистий **додаток**! \ Congratulations! You **created** your personal **app**!
+
+## Views.py, index.html та models.py, які були створенні у нашому проєкті
+Всі наші views.py з точним описом ви можете знайти, перейшовши за посиланням: <a href = "readme_files/all_views.md">asdas</a>

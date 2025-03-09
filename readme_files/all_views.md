@@ -1,3 +1,214 @@
+# Всі views.py з точним описом, які ми створили в нашому проєкті \ All views.py with precise description that we created in our project
+
+## Додаток home_app \ Home_app application
+
+```python
+# Імпортуємо усі необхідні модулі \ Import all necessary modules
+from django.shortcuts import render
+from django.http import  HttpRequest
+
+# Створюємо функцію відображення render_home_app \ Create the render_home_app display function
+def render_home_app(request: HttpRequest):
+    # Повертаємо нашу відоборажену сторінку \ Returning our displayed page 
+    return render(request, "home_app/home.html")
+```
+
+## Додаток registration1 \ Registration1 application
+
+```python
+# Імпортуємо усі необхідні модулі \ Import all necessary modules
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.db.utils import IntegrityError
+from django.core.mail import send_mail
+from .models import Code_Number
+from django.contrib.auth import authenticate, login
+from django.http import  HttpRequest
+
+
+# Створюємо функцію відображення render_registration1 \ Create the render_registration1 display function
+def render_registration1(request: HttpRequest):
+    # Створюємо об'єкт помилки \ Creating an error object
+    error = ""
+    # Створюємо умову, якщо користувач відправив форму \ We create a condition if the user submitted the form
+    if request.method == "POST":
+        # Получаємо дані з input \ Getting data from the inputs
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+        confirm_password = request.POST.get("confirm-password")
+        # Якщо поле пароля та поле підтвердження пароля однакові \ If the password field and the password confirmation field are the same
+        if password == confirm_password:      
+            # Створюємо оператор try, щоб в разі помилки сервер не закрився \ We create a try statement so that in case of an error the server does not close
+            try:
+                # Створюємо нового користувача з введеними даними \ Сreate a new user with the entered data
+                User.objects.create_user(username= name, email= email, password= password)
+                error = ""
+                # Переадресуємо користувача на сторінку успішної реєстрації \ Redirect the user to the successful registration page
+                return redirect("/registration/succesregistration/")
+            # Робимо виключення, якщо користувач вже існує \ Throw an exception if the user already exists
+            except IntegrityError:
+                # Записуємо в об'єкт помилки текст помилки \ Write the error text to the error object
+                error = "Такий користувач вже існує!"
+            # Робимо виключення, якщо форма пуста \ Throw an exception if the form is empty
+            except ValueError:
+                # Записуємо в об'єкт помилки текст помилки \ Write the error text to the error object
+                error = "Поля не можуть бути пустими!"
+            # Робимо виключення \ Throw an exception
+            except:
+                # Записуємо в об'єкт помилки текст помилки \ Write the error text to the error object
+                error = "Користувача не знайдено"
+        # Якщо поля не співпадають \ If the fields do not match
+        else:
+            #                 # Записуємо в об'єкт помилки текст помилки \ Write the error text to the error object
+            error = "Паролі не співпадають"
+    # Відображаємо сторінку з додатковим параметром context, через який ми відображаємо на сторінці помилку \ We display the page with an additional context parameter, through which we display an error on the page
+    return render(request, "registration1/registration1.html",  context= {"error": error})
+```
+
+## Додаток registration3 \ Registration3 application
+
+```python
+# Імпортуємо усі необхідні модулі \ Import all necessary modules
+from django.shortcuts import render, redirect
+from django.http import  HttpRequest
+
+
+# Створюємо функцію відображення render_registration3 \ Create the render_registration3 display function
+def render_registration3(request: HttpRequest):
+    # Створюємо умову, якщо користувач натиснув на кнопку \ We create a condition if the user clicks the button 
+    if request.method == 'POST':
+        # Переадресуємо користувача на авторизацію \ Redirect user to autorithation page
+        return redirect("/authorithation/logininformation/")
+    # Відображаємо сторінку \ Display page
+    return render(request, "registration3/registration3.html")
+```
+
+## Додаток authorithation1 \ Authorithation1 application
+
+```python
+# Імпортуємо усі необхідні модулі \ Import all necessary modules
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+import random
+from registration1.models import Code_Number
+from django.contrib.auth.models import User
+from django.http import  HttpRequest
+
+
+# Створюємо функцію відображення render_authorithation1 \ Create the render_authorithation1 display function
+def render_authorithation1(request: HttpRequest):
+    # Створюємо об'єкт помилки \ Creating an error object
+    error = ""
+    # Створюємо умову, якщо користувач відправив форму \ We create a condition if the user submitted the form
+    if request.method == "POST":
+        # Получаємо дані з input \ Getting data from the inputs
+        username = request.POST.get("name")
+        password = request.POST.get("password")
+        # Перевіряємо, чи існує користувач у базі даних \ Checking if a user exists in the database
+        user = authenticate(request, username= username, password = password)
+        # Створюємо оператор try, щоб в разі помилки сервер не закрився \ We create a try statement so that in case of an error the server does not close
+        try:
+            # Якщо користувач існує - створюємо випадковий 6-значний код та переадресуємо його на 2 етап авторизації \ If the user exists - we generate a random 6-digit code and redirect it to the 2nd stage of authorization
+            if user != None:
+                # Авторизуємо користувача \ Login user
+                login(request, user)
+                # Створюємо випадковий 6-значний код та зберігаємо його в базі даних \ We generate a random 6-digit code and save it in the database
+                random_number = random.randint(99999, 999999)
+                Code_Number.objects.create(number = random_number, user_id = user.id)   
+                # Переадресуємо користувача на 2 етап перевірки \ Redirect the user to the 2nd stage of verification
+                return redirect('/authorithation/loginemail/')
+            # Якщо користувача не знайдено \ If user does not exist
+            else:
+                # Записуємо в об'єкт помилки текст помилки \ Write the error text to the error object
+                error = "Не вірний пароль або ім'я"
+        # Робимо виключення \ Throw an exception
+        except:
+            # Записуємо в об'єкт помилки текст помилки \ Write the error text to the error object
+            error = "Не вірний пароль або ім'я"
+    # Відображаємо сторінку з додатковим параметром context, через який ми відображаємо на сторінці помилку \ We display the page with an additional context parameter, through which we display an error on the page
+    return render(request, "authorithation1/index.html",  context= {"error": error})
+```
+
+## Додаток authorithation2 \ Authorithation2 application
+
+```python
+# Імпортуємо усі необхідні модулі \ Import all necessary modules
+from django.shortcuts import render, redirect
+import random
+from django.core.mail import send_mail
+from registration1.models import Code_Number
+from django.http import  HttpRequest
+
+
+# Створюємо функцію відображення render_authorithation2 \ Create the render_authorithation2 display function
+def render_authorithation2(request: HttpRequest):
+    # Створюємо об'єкт помилки \ Creating an error object
+    error = ""
+    # Створюємо оператор try, щоб в разі помилки сервер не закрився \ We create a try statement so that in case of an error the server does not close
+    try:
+        # Перевіряємо чи користувач вже авторизований \ Checking if the user is already authenticated
+        if request.user.is_authenticated:
+            # Отримуємо з бази даних випадковий код за id користувача \ We get a random code from the database by user id
+            random_number = Code_Number.objects.get(user_id = request.user.id).number
+            # Відправляємо лист на електронну пошту з випадковим кодом \ We send an email with a random code
+            send_mail(
+                subject = "Код для підтвердження",
+                message = f"Вітаємо!\n ваш код для підтвердження: {random_number}",
+                from_email = "qrprojectdjangoteam2@gmail.com",
+                recipient_list = [f"{request.user.email}"],
+                fail_silently = False
+                )
+            # Створюємо умову, якщо користувач відправив форму \ We create a condition if the user submitted the form
+            if request.method == "POST":
+                # Получаємо дані з input \ Getting data from the inputs
+                email_code = request.POST.get("email_code")
+                # Перевіряємо чи введений код однаковий з випадковим \ Checking if the entered code matches the random one
+                if int(email_code) == random_number:
+                    # Видаляємо з бази даних старий код \ We delete the old code from the database
+                    Code_Number.objects.get(user_id = request.user.id).delete()
+                    # Відправляємо користувача на сторінку успішної авторизації \ We send the user to the success authorithation page
+                    return redirect("/authorithation/succesauthorithation/")
+                # Якщо код підтвердженян не співпадає з відправленим кодом на пошту \ If the confirmation code does not match the code sent to the email
+                else:
+                    # Записуємо в об'єкт помилки текст помилки \ Write the error text to the error object
+                    error = "Код підтвердження не вірний!"
+    # Робимо виключення \ Throw an exception
+    except:
+        # Отримуємо всі старі коди по id користувача та видаляємо їх \ We get all old codes by user id and delete them 
+        Code_Number.objects.filter(user_id = request.user.id).delete()
+         # Відображаємо сторінку з додатковим параметром context, через який ми відображаємо на сторінці помилку \ We display the page with an additional context parameter, through which we display an error on the page
+    return render(request, "authorithation2/index.html", context= {"error": error})
+```
+
+## Додаток authorithation3 \ Authorithation3 application
+
+```python
+# Імпортуємо усі необхідні модулі \ Import all necessary modules
+from django.shortcuts import render, redirect
+from django.contrib.auth import logout
+from django.http import  HttpRequest
+
+
+# Створюємо функцію відображення render_authorithation3 \ Create the render_authorithation3 display function
+def render_authorithation3(request: HttpRequest):
+    # Створюємо умову, якщо користувач натиснув на кнопку \ We create a condition if the user clicks the button 
+    if request.method == 'POST':
+        # Переадресовуємо користувача на головну сторінку \ Redirect user to main page
+        return redirect("/")
+    # Відображаємо сторінку авторизаці3 \ Display the authorization3 page
+    return render(request, "authorithation3/authorithation3.html")
+
+# Створюємо функцію для вихoду з акаунту \ Create function for exit from acount
+def logout_user(request: HttpRequest):
+    # Виходимо з аканту \ Exit from acount
+    logout(request)
+    # Переадресовуємо користувача на головну сторінку \ Redirect user to main page
+    return redirect("/")
+```
+## Додаток qrgenerate_app \ Qrgenerate_app application
+
+```python
 # Імпортуємо усі необхідні модулі \ Import all necessary modules
 import PIL.Image
 from urllib.parse import urlparse
@@ -201,3 +412,4 @@ def render_check_qr(request: HttpRequest, qr_id: int):
         error = "Ваша підписка завершилась або ви ще не придбали її! subscribe_user"
     # Відображаємо сторінку з додатковим параметром context, через який ми відображаємо на сторінці помилку \ We display the page with an additional context parameter, through which we display an error on the page
     return render(request, "redirect/redirect.html", context = {"error": error})
+```
