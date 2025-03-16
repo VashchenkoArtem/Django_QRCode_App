@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+ir(lm*&6uqi+6s3jpw7y_hs_iu_qavh1ut7n@y^oj#-nlml%)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -154,5 +154,8 @@ EMAIL_HOST_PASSWORD = 'mplb shyv wxva jhuw'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 LOGIN_URL = reverse_lazy('authorithation1')

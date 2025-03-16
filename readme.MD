@@ -258,4 +258,4 @@ path("Adress1/", include("<path_to_urls.py>"))
 - Вітаємо! Ви **створили** особистий **додаток**! \ Congratulations! You **created** your personal **app**!
 
 ## Views.py, index.html та models.py, які були створенні у нашому проєкті
-Всі наші views.py з точним описом ви можете знайти, перейшовши за посиланням: <a href = "readme_files/all_views.md">asdas</a>
+Всі наші views.py з точним описом ви можете знайти, перейшовши за <a href = "readme_files/all_views.md">посиланням</a>
