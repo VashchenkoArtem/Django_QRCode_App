@@ -1,8 +1,22 @@
-# Генератор QR-кодів/QR-Code generator
+<h1 align = "center">Генератор QR-кодів/QR-Code generator</h1>
+
 ---
 ## Генератор QR-кодів - проєкт, який був створений для створювання кастомізованих QR-кодів, які користувач зберігає на сайті
 QR Code Generator is a project that was created to create customized QR codes that the user saves on the site.
 ---
+## Навігація по README \ Navigation on README:
+- **[Функціонал сайту \ Site functionality](#знаходячись-на-сайті-ви-можете)**
+- **[Ціль проєкта \ The goal of the project](#ціль-проєкта)**
+- **[Розробники \ Developers](#над-цим-проєктом-працювали--they-worked-on-the-project)**
+- **[Посилання на Figma та FigJam \ Links to Figma and FigJam](#посилання-на-figma-дизайн--link-on-figma-design-file)**
+- **[Бібліотеки, які використовувались в проєкті \ Libraries used in the project](#в-проєкті-використовувались-такі-бібліотеки)**
+- **[Локальний запуск проєкту \ Local project launch](#як-запустити-проєкт-локальноhow-to-run-a-project-locally)**
+- **[Структура проєкта \ Structure of project](#структура-проєкта--structure-of-project)**
+- **[Функціонал кожного з додатків \ Functionality of each application](#за-що-відповідає-кожен-з-додатків--what-is-each-application-responsible-for)**
+- **[Принцип збереження QR кодів в проєкті \ The principle of storing QR codes in a project](#збереження-qr-кодів--saving-qr-codes)**
+- **[Приклад створення django проєкта \ Example of creating a django project](#приклад-створення-django-проєкта--example-of-creating-a-django-project)**
+- **[Приклад створення додатку \ An example of creating an application](#приклад-створення-додатку--example-of-creating-application)**
+- **[Views.py, models.py та index.html в проєкті \ Views.py, models.py and index.html in the project](#viewspy-indexhtml-та-modelspy-які-були-створенні-у-нашому-проєкті)**
 ## Знаходячись на сайті ви можете: 
 - **Створити акаунт**
 - **Увійти в акаунт**
@@ -22,14 +36,16 @@ QR Code Generator is a project that was created to create customized QR codes th
 ## Ціль проєкта
 Нашою **ціллю** було **створення зручного генераторат QR-кодів**, де людина може **обрати** будь-яку **кастомізацію**
 
-## Над цим проєктом працювали/They worked on the project:
+## Над цим проєктом працювали \ They worked on the project:
 **Ващенко Артем(TeamLead)**: https://github.com/VashchenkoArtem
 **Кирило Харлан**: https://github.com/KirillKharlan
 **Марков Дмитро**: https://github.com/DmitriyM08
 **Архіп Гончар**: https://github.com/Arhip-ops
 
-## Посилання на figma дизайн/ Link on figma design file: 
+## Посилання на figma дизайн \ Link on figma design file: 
 https://www.figma.com/design/09TXxVuloOwYY96sCny7ie/Design-For-QR-Code-Practice?node-id=0-1&p=f&t=3qrRc0rj35zyk61W-0
+## Посилання на схему роботи баз даних у проєкті \ Adding to the project database workflow
+https://www.figma.com/board/XKc7HNrlSccatNZPn3CmGw/%D0%A1%D1%85%D0%B5%D0%BC%D0%B0-QR-%D0%BA%D0%BE%D0%B4%D1%96%D0%B2?node-
 
 Цей проєкт **корисний** для **початківців** тим, що під час **праці** над ним **задіюється робота** з **базами даних**, **CSS** та **HTML**.
 
@@ -86,7 +102,19 @@ python manage.py runserver
 11.  Вітаємо! Ви **локально** **запустили** проєкт! \\ Congratulations! You have **locally** **launched** the project!
 
 ## Структура проєкта \ Structure of project
-![](images_readme/structure.png)
+```mermaid
+graph TD;
+    Django_QRCode_App-->qr_project-->qr["templates, __init__.py, asgi.py, db.sqlite3, manage.py, settings.py, urls.py, wsgi.py"];
+    Django_QRCode_App-->registration1-->reg1["static, templates, admin.py, apps.py, models.py, tests.py, views.py"];
+    Django_QRCode_App-->registration3-->reg2["static, templates, admin.py, apps.py, models.py, tests.py, views.py"];
+    Django_QRCode_App-->authorithation1-->log1["static, templates, admin.py, apps.py, models.py, tests.py, views.py"];
+    Django_QRCode_App-->authorithation2-->log2["static, templates, admin.py, apps.py, models.py, tests.py, views.py"];
+    Django_QRCode_App-->authorithation3-->log3["static, templates, admin.py, apps.py, models.py, tests.py, views.py"];
+    Django_QRCode_App-->subscribe-->sub["static, templates, admin.py, apps.py, models.py, tests.py, views.py"];
+    Django_QRCode_App-->qrgenerate_app-->generate["static, templates, admin.py, apps.py, models.py, tests.py, views.py"];
+    Django_QRCode_App-->my_codes-->codes["static, templates, admin.py, apps.py, models.py, tests.py, views.py"];
+    Django_QRCode_App-->contacts-->contac["static, templates, admin.py, apps.py, models.py, tests.py, views.py"];
+```
 
 ## За що відповідає кожен з додатків? \ What is each application responsible for?
 
@@ -171,7 +199,41 @@ python manage.py runserver
 ### Файл requirements.txt \ Requirements.txt file
 
 В цьому **файлі** ми **створили** всі **необхідні** **бібліотеки** та їх **версії** для **запуску проєкта**. \ In this **file** we **created** all the **necessary** **libraries** and their **versions** to **launch the project**.
-
+## Збереження QR кодів \ Saving QR codes
+В нашому проєкті ми зберігаємо наші qr коди в той час, коли на сторінці qrgenerate_app користувач створює qr код. Він зберігається в базі даних qrgenerate_app_qr_codes. Код, в якому створюється об'єкт qr кода та зберігається у базі даних: \ In our project we store our qr codes while on the qrgenerate_app page the user creates a qr code. It is stored in the qrgenerate_app_qr_codes database. The code in which the qr code object is created and stored in the database:
+```python
+# Створюємо умову, якщо користувач ще не створив максимальну кількість qr-кодів \ We create a condition if the user has not yet created the maximum number of QR codes
+if len(QR_Codes.objects.filter(user_id=request.user.id)) < user_subscribe.max_count_qrs:
+    # Знаходимо теперешній час \ Finding the present tense
+    date_now = datetime.datetime.now()
+    # Форматуємо його у потрібний формат \ Format it in the desired format
+    date = datetime.datetime.strftime(date_now, "%Y-%m-%d %H:%M:%S")
+    format_date = f"{date.split(':')[0].split('-')[2].split(' ')[0]}.{date.split(':')[0].split('-')[1].split(' ')[0]} {date.split(':')[0].split('-')[2].split(' ')[1]}:{date.split(':')[1].split('-')[0].split(' ')[0]}"
+    # Створюємо об'єкт qr-кода в базі даних \ Create qrcode object in database
+    qr_code = QR_Codes.objects.create(user=request.user, name=name_code, url=url_code, date_created=format_date)
+    # Створюємо об'єкт редіректа цього qr-кода \ We create a redirect object for this qr code
+    redirect_object = Redirect_QR.objects.create(qrcode=name_code, url=url_code, qr= QR_Codes.objects.get(id = qr_code.id))
+# Якщо користувач створив максимальну кількість qr-кодів \ If the user has created the maximum number of QR codes
+else:
+    # Створюємо об'єкт помилки \ Creating an error object
+    error = "Занадто багато QR-кодів!"
+# Створюємо дерикторію до папки, де храняться всі qr коди користувача \ We create a directory to the folder where all the user's QR codes are stored
+user_folder = os.path.join('qr_codes', request.user.username)
+# Перетворюємо зображення в  IO \ Convert image into IO
+img_io = io.BytesIO()
+# Зберігаємо зображення у форматі png \ Convert image into png format
+img.save(img_io, format="PNG")
+# Перетворюємо зображення в формат ContentFile \ Convert image into format ContentFile 
+img_content = ContentFile(content=img_io.getvalue(), name=f"{name_code}.png")
+# Створюмєо шлях до файлу \ Create path to file
+file_path = os.path.join(user_folder, f"{name_code}.png")
+# Створюємо умову, якщо qr код існує \ Створюємо умову, якщо qr код існує
+if qr_code:
+    # Зберігаємо зображення qr кода \ Save qr code image
+    qr_code.image.save(file_path, img_content)
+    # Зберігаємо qr код \  Save qr code
+    qr_code.save()
+```
 ## Приклад створення django-проєкта \ Example of creating a django-project
 1. **Встановіть віртуальне оточення** \ **Set venv**
 2. **Активуйте** його \ **Activate** it
