@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block link %}
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'contacts_app/contacts.css' %}">
+{% endblock %}
+
+{% block title %}
+    Сторінка контактів
+{% endblock %}
+
+{% block content %}
+    <div class = "Screen">
+        <div class = "hat">
+            <h1 class = "h1Generate">Виникли питання? <br> Звертайся до служби підтримки!
+            </h1>
+            <div class = "urls">
+                <div class = "mainUrl">
+                    <a href = "{% url 'home_app'%}" class = "mainPage">Головна</a>
+                </div>
+                {% if request.user.is_authenticated %}
+                    <h1 class = "user-h1">{{request.user.username}}</h1>
+                    <a href="{% url 'my_codes' %}" class = "MyQRCodesPage" >Мої QR-коди</a>
+                    <a href = "{% url 'logout' %}"class = "logout-button">Вийти з акаунту</a>
+                {% else %}
+                    <a href="/codes/my_codes/" class = "MyQRCodesPage" >Мої QR-коди</a>    
+                    <a href="/registration/informationabout/" class = "registrationPage">Реєстрація</a>
+                    <a href="/authorithation/logininformation/"class = "authorizationPage">Авторизація</a>
+                    
+                {% endif %}
+                </div>
+            </div>
+        <main>
+            <div class="main-form">
+                <div class="gmail-form">
+                    <h2 class="gmail-text">Електронна пошта:</h2>
+                    <h2 class="gmail">qrprojectdjangoteam2@gmail.com</h2>
+                </div>
+                <div class="phone-form">
+                    <h2 class="phone-text">Номер телефона:</h2>
+                    <h2 class="phone">+380 68 206 79 59</h2>
+                </div>
+            </div>
+            <div class = "contacts" style="padding-top: 86px;">
+                <div class = "allIcons">
+                    <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
+                    <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">
+                    <img class = "imageCall" src="{% static 'images/callIcon.png' %}" alt="">
+                </div>
+            </div>
+        </main>
+    </div>
+{% endblock %}

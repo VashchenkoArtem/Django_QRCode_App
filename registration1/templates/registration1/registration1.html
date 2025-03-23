@@ -1,0 +1,63 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block link %}
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'registration1/registration1.css' %}">
+{% endblock %}
+{% block content %}
+    <div class = "Screen">
+        <div class = "hat"; style="height: 136px; gap:200px;">
+            <h1 class = "h1Generate">Реєстрація</h1>
+            <div class = "urls">
+                <a href = "{% url 'home_app' %}" class = "mainPage">Головна</a>
+                <a href="{% url 'my_codes'%}" class = "my-codes">Мої QR-коди</a>
+                <div class = "myQRCodesPage">
+                    <a href="{% url 'registration1' %}"class = "">Реєстрація</a>
+                </div>
+                <a href="{% url 'authorithation1'%}"class = "autorithation">Авторизація</a>
+
+            </div>
+        </div>
+        <div class="registration-form">
+            <div class="registration-frame">
+                <h1 class="info-text">Інформація про вас</h1>
+
+                <form method = "post">
+                    {% csrf_token %}
+                    <div class="name-form-frame">
+                        <label class="text-name">Ім'я</label>
+                        <input class="name-form" type="text" name = "name" required>
+                        <h5 class="under-name">Наприклад: Artem</h5>
+                    </div>
+                    <div class="email-form-frame">
+                        <label class="text-name">Пошта</label>
+                        <input class="name-form" type="email" name="email" required>
+                        <h5 class="under-name">Наприклад: example123@gmail.com</h5>
+                    </div>
+                    <div class="password-form-frame">
+                        <label class="text-name">Пароль</label>
+                        <input class="name-form" type="password" name="password" required minlength="8">
+                        <h5 class="under-name">Не менше 8 символів</h5>
+                    </div>
+                    <div class="password-form-frame confirm-password">
+                        <label class="text-name">Підтвердження пароля</label>
+                        <input class="name-form" type="password" name="confirm-password" required minlength="8">
+                        <h5 class="under-name">Не менше 8 символів</h5>
+                    </div>
+                    <h1 class = "error">{{error}}</h1>
+                    <button class="under-button-frame" type="submit">Надіслати</button>
+                </form>
+            </div>
+        </div>
+        <div class = "contacts" style="padding-top: 51px;">
+            <div class = "allIcons">
+                <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
+                <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">
+                <img class = "imageCall" src="{% static 'images/callIcon.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+{% endblock %}

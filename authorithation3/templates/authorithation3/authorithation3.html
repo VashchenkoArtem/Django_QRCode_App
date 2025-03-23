@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'authorithation3/authorithation3.css' %}">
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'authorithation2/authorithation2.css' %}">
+{% endblock %}
+{% block content %}
+    <div class = "Screen">
+        <div class = "hat"; style="height: 136px; gap:222px;">
+            <h1 class = "h1Generate">Авторизація</h1>
+            <div class = "urls">
+                <div class = "mainUrl">
+                    <a href = "{% url 'home_app' %}" class = "mainPage" style="margin-left:-10px">Головна</a>
+                </div>
+                <a href="{% url 'my_codes' %}" class = "my-codes">Мої QR-коди</a>
+                <a href="{% url 'registration1' %}" class = "registration">Реєстрація</a>
+                <a href="{% url 'authorithation1' %}"class = "MyQRCodesPage">Авторизація</a>
+
+            </div>
+        </div>
+        <div class="registration-form">
+            <div class="registration-frame">
+                <img src="{% static 'images/succesregistration.png' %}" style="padding-top: 75px" alt="">
+                <form method = "POST">
+                    {% csrf_token %}
+                    <div class = "frame-succes">
+                        <h1 class = 'h1'>Вітаємо! <br>Ви успішно авторизувалися!</h1>
+                    </div>
+
+                    <button class="under-button-frame" type="submit">На головну</button>
+                </form>
+            </div>
+        </div>
+        <div class = "contacts"  style="padding-top: 51px;">
+            <div class = "allIcons">
+                <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
+                <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">
+                <img class = "imageCall" src="{% static 'images/callIcon.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+{% endblock %}

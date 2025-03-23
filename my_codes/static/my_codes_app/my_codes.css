@@ -1,0 +1,352 @@
+*{
+    margin:0px;
+    padding: 0px;
+    font-family: "Jost", sans-serif;
+}
+.Screen{
+    background-image: url('/../static/images/bgForGenerate.png');
+    background-color: #EDF4FC;
+    background-size: cover;
+    background-attachment: fixed;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hat{
+    width: 100%;
+    height: 136px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 180px;
+}
+.urls{
+    width: 700px;
+    height: 58px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    padding-top: 50px;
+    font-weight: normal;
+}
+.h1Generate{
+    width: 428px;
+    font-size: 64px;
+    height: 63.07px;
+    padding-left: 200px;
+    padding-top: 35px;
+}
+.spanQR{
+    font-weight: bold;
+    color: #FF9334;
+}
+a{
+    text-decoration: none;
+    font-family: 'Arimo', sans-serif;
+    color: black;
+    font-size: 20px;
+
+}
+.registrationPage{
+    margin-left: -15px;
+}
+.MyQRCodesPage{
+    display: flex;
+    flex-direction: row;
+    width: 148px;
+    height: 39px;
+    background-color: rgba(255, 147, 52, 0.62);
+    border-radius: 30px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    border: black solid 1px;
+    margin-left: 4px;
+}
+.mainPage{
+    color: black;
+    opacity: 100%;
+}
+main{
+    width: 100%;
+}
+.codes{
+    width: 100%;
+    height: 506px;
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.contacts{
+    width: 100%;
+    height: 79px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; 
+    padding-top: 5px;
+}
+.allIcons{
+    width: 212px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 46px;
+    padding-left: 40px;
+    padding-top: 26px;
+}
+.imageTelegram{
+    width: 40px;
+    height: 40px;
+}
+.user-h1{
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
+}
+.bg-qr-code{ 
+    width: 269px; 
+    height: 321px; 
+} 
+.logout-button{
+    margin-left: -15px;
+}
+.qr-code{ 
+    width: 234px; 
+    height: 265px;   
+    border-radius: 30px; 
+    margin: 30px 40px 19px 40px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px; 
+    padding-bottom: 100px;
+} 
+ 
+form{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+.qr-code-img{ 
+    width: 250px; 
+    height:250px; 
+    border-radius: 30px; 
+    border: 1px black solid; 
+    margin-top: 30px; 
+} 
+ 
+.qr-code-title{ 
+    all: unset; 
+    font-size: 25px; 
+    font-weight: bold;
+
+ 
+} 
+.qr-code-title:hover{ 
+    cursor: pointer; 
+    text-decoration: underline; 
+} 
+.qr-code-button{ 
+    all: unset; 
+    font-size: 30px; 
+    font-weight: bold; 
+} 
+ 
+.qr-code-button:hover{ 
+    cursor: pointer; 
+    text-decoration: underline; 
+}
+.qr-code-date{
+    width: 240px;
+    text-align: center;
+}
+span{
+    font-weight: normal;
+}
+
+.button-delete{
+    all: unset;
+}
+
+.buttons-download-delete{
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+}
+.bin-image{
+    width: 25px;
+    height: 25px;
+}
+
+.bin-image:hover{
+    cursor: pointer;
+}
+.form-qr{
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    border: 1px black solid;
+}
+
+.qr-objects{
+    display: flex;
+    flex-direction: column;
+    width: 355px;
+}
+.specific-url{
+    font-size: 15px;
+}
+.h1-url{
+    font-size: 20px;
+    font-weight: bold;
+}
+.specific-date-created{
+    font-size: 20px;
+}
+.specific-date-expired{
+    font-size: 20px;
+}
+.specific-image{
+    width: 250px;
+    height: 250px;
+    margin-left: 45px;
+}
+.bg-form{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-confirmed{
+    width: 400px;
+    height: 200px;
+    background-color: rgba(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    border: 1px black solid;
+    gap: 20px;
+}
+
+.h1-confirmed{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.confirm-delete{
+    all: unset;
+    cursor: pointer;
+    color: red;
+    border: 1px black solid;
+    border-radius: 30px;
+    width: 150px;
+    text-align: center;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.confirm-delete:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.bg-form.disabled{
+    visibility: hidden;
+}
+
+.doesnt-work{
+    border: 2px red solid;
+}
+.error-name{
+    margin-right: 10px;
+}
+.error-image{
+    margin-bottom: -3px;
+    width: 25px;
+    height: 25px;
+}
+
+.error-button{
+    color: red;
+    text-decoration: underline;
+}
+.error-form{
+    width: auto;
+    height: 200px;
+}
+.error-specific-text{
+    font-size: 30px;
+    color: red;
+    text-align: center;
+}
+
+.bg{
+    position: fixed;
+    display: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    opacity: 50%;
+    cursor: pointer;
+}
+
+.close{
+    visibility: hidden;
+}
+
+.close-button{
+    width: 50px;
+    height: 50px;
+    border-radius: 60px;
+    background-color: rgb(222, 221, 221);
+    position: absolute;
+    left: 360px;
+    top: -10px;
+    cursor: pointer;
+}
+
+.close-button:hover{
+    background-color: rgb(212, 212, 212);
+}
+
+.for-error{
+    left: 320px
+}
+
+.flex-wraper{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 1536px;
+}

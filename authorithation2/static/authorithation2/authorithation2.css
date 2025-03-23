@@ -1,0 +1,292 @@
+*{
+    font-family: 'Jost', sans-serif;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.Screen{
+    height: 100%;
+    width: 100%;
+    background-image: url('/../static/images/bgForGenerate.png');
+    background-color: #EDF4FC;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hat{
+    width: 100%;
+    height: 170px;
+    display: flex;
+    flex-direction: row;
+    gap: 180px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.h1Generate{
+    width: 390px;
+    font-size: 64px;
+    line-height: 70px;
+    padding-left: 200px;
+    padding-top: 50px;
+}
+.spanQR{
+    color: #FF9334;
+}
+.urls{
+    width: 700px;
+    height: 58px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    padding-top: 60px;
+}
+a{
+    text-decoration: none;
+    font-family: 'Arimo', sans-serif;
+
+    color: black;
+    font-size: 20px;
+}
+.MyQRCodesPage{
+    display: flex;
+    flex-direction: row;
+    width: 148px;
+    height: 39px;
+    background-color: rgba(255, 147, 52, 0.62);
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: black solid 1px;
+    margin-left: -8px;
+}
+.mainPage{
+    margin-left: -15px;
+}
+.registration{
+    margin-left: 9px;
+}
+.mainPage{
+    color: black;
+    opacity: 100%;
+}
+.spanQR{
+    color: #FF9334;
+}
+.codes{
+    margin-left: 30px;
+}
+
+.emailImgFrame{
+    width: 92px;
+    height: 72px;
+    display: flex;
+    flex-direction: c;
+    justify-content: center;
+    align-items: center;
+}
+
+.emailImg{
+    width: 92px;
+    height: 72px;
+}
+
+.authorithation-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 528px;
+}
+
+.authorithation-frame{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    
+    width: 418px;
+    height: 492px;
+    
+    background: rgba(255, 255, 255, 0.66);
+    border-radius: 30px;
+}
+.info-text{
+    width: 382px;
+    height: 35px;
+    
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 29px;
+    text-align: center;
+    color: #000000;
+    line-height: 14px;
+    color: rgba(0, 0, 0, 0.27);
+    padding-top: 50px;
+}
+
+.email-form-frame{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    
+    width: 287px;
+    height: 67px;
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    flex-grow: 0;
+}
+
+.text-name{
+    width: 287px;
+    height: 29px;
+    
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    color: rgba(0, 0, 0, 0.5);
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+.frame{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.name-form{
+    box-sizing: border-box;
+
+    width: 287px;
+    height: 34px;
+    
+    background: #F9FBFE;
+    border: 1px solid #C4C4C4;
+    border-radius: 10px;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.under-name{
+    width: 207px;
+    height: 13px;
+    
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    
+    color: rgba(0, 0, 0, 0.21);
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.under-button-frame{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 21px 64px;
+    gap: 10px;
+    width: 287px;
+    height: 57px;
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    border-radius: 10px;
+    flex: none;
+    flex-grow: 0;
+    height: 22px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+    color: #6CE18B;
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+}
+.under-button-frame:hover{
+    cursor: pointer;
+    background-color: #c4c4c428;
+    color: #53a96a;
+}
+.text-button{
+    height: 22px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+    color: #6CE18B;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.error{
+    font-size: 15px;
+    width: 287px;
+    text-align: center;
+    color: red;
+    flex: none;
+
+}
+.contacts{
+    width: 100%;
+    height: 79px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.allIcons{
+    width: 212px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 46px;
+    padding-left: 40px;
+    padding-top: 27px;
+}
+
+.imageTelegram{
+    width: 40px;
+    height: 40px;
+
+}
+
+.emailImg{
+    padding-top: 75px;
+    padding-right: 10px;
+}
