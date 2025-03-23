@@ -1,0 +1,305 @@
+*{
+    font-family: 'Jost', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.Screen{
+    height: 100%;
+    width: 100%;
+    background-image: url('/../static/images/bgForGenerate.png');
+    background-color: #EDF4FC;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hat{
+    width: 100%;
+    height: 97px;
+    display: flex;
+    flex-direction: row;
+    gap: 180px;
+    flex-wrap: nowrap;
+}
+
+.subscribe-text{
+    font-size: 64px;
+    padding-left: 200px;
+    padding-top: 25px;
+    width: 428px;
+}
+.spanQR{
+    color: #FF9334;
+}
+.urls{
+    width: 700px;
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    padding-top: 57px;
+}
+a{
+    text-decoration: none;
+    font-family: 'Arimo', sans-serif;
+
+    color: black;
+    font-size: 20px;
+}
+.MyQRCodesPage{
+    display: flex;
+    flex-direction: row;
+    width: 148px;
+    height: 39px;
+    background-color: rgba(255, 147, 52, 0.62);
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    border: black solid 1px;
+}
+.mainPage{
+    color: black;
+    opacity: 100%;
+}
+
+.subscribe-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 87px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 426px;
+    height: 441px;
+    gap: 34px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.subscribe-buy{
+    padding-top: 18px;
+    font-size: 36px;
+    width: 368px;
+    height: 42px;
+    font-weight: normal;
+    text-align: center;
+    padding-left: 30px;
+}
+
+
+
+.form-inputs{
+    width: 378px;
+    height: 172px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    padding-left: 30px;
+}
+
+.input-number{
+    width: 287px;
+    height: 61px;
+    display: flex;
+    flex-direction: column;
+}
+
+.number-text{
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: normal;
+}
+
+.number-input{
+    width: 287px;
+    height: 34px;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    border: 1px rgba(196, 196, 196, 1) solid;
+}
+
+.number-clue{
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.21);
+    font-weight: normal;
+}
+
+.input-cvv{
+    width: 131px;
+    height:70px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 27px;
+}
+
+.cvv-text{
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: normal;
+}
+
+.cvv-input{
+    width: 112px;
+    height: 34px;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    border: 1px rgba(196, 196, 196, 1) solid;
+}
+
+.cvv-clue{
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.21);
+    font-weight: normal;
+}
+
+.input-expiration{
+    width: 191px;
+    height:52px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 27px;
+    margin-left: 27px;
+}
+.count-input{
+    margin-top: 15px;
+}
+.count-qrs{
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: normal;
+}
+.expiration-text{
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: normal;
+}
+
+.expiration-input{
+    width: 112px;
+    height: 34px;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    border: 1px rgba(196, 196, 196, 1) solid;
+}
+
+.expiration-clue{
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.21);
+    font-weight: normal;
+}
+
+.subscribe-button{
+    margin-top: 30px;
+    width: 393px;
+    height: 92px;
+    text-align: center;
+    padding-left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    width: 226px;
+    height: 54px;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px rgba(196, 196, 196, 1) solid;
+    border-radius: 15px;
+    color: rgba(87, 238, 127, 1);
+    font-size: 20px;
+}
+button:hover{
+    cursor: pointer;
+    background-color: #c4c4c428;
+    color: #68d184;
+}
+.contacts{
+    width: 100%;
+    height: 79px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-top: 90px;
+}
+.allIcons{
+    width: 212px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 46px;
+    padding-left: 40px;
+    padding-top: 27px;
+}
+
+.imageTelegram{
+    width: 40px;
+    height: 40px;
+
+}
+.form-qr{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-objects{
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 350px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    position: fixed;
+    border-radius: 30px;
+    border: 1px black solid;
+    padding: 0px 25px 0px 25px;
+    cursor: pointer;
+}
+
+.subscribe-type{
+    font-size: 25px;
+    text-align: center;
+}
+.form-qr.disabled{
+    visibility: hidden;
+}
+
+.url-home{
+    font-weight: bold;
+    text-decoration: underline;
+}
+.close-button{
+    width: 50px;
+    height: 50px;
+    border-radius: 60px;
+    background-color: rgb(222, 221, 221);
+    position: absolute;
+    left: 360px;
+    top: -10px;
+    cursor: pointer;
+}
+
+.close-button:hover{
+    background-color: rgb(212, 212, 212);
+}

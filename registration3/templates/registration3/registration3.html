@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block link %}
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'registration3/registration3.css' %}">
+{% endblock %}
+{% block content %}
+    <div class = "Screen">
+        <div class = "hat"; style="height: 136px; ">
+            <h1 class = "h1Generate">Реєстрація</h1>
+            <div class = "urls">
+                <div class = "mainUrl">
+                    <a href = "{% url 'home_app' %}" class = "mainPage">Головна</a>
+                </div>
+                <a href="{% url 'my_codes' %}" class = "my-codes">Мої QR-коди</a>
+                <a href="{% url 'registration3' %}" class = "MyQRCodesPage" >Реєстрація</a>
+                <a href="{% url 'authorithation1' %}"class = "autorithation">Авторизація</a>
+                
+            </div>
+        </div>
+        <div class="registration-form">
+            <div class="registration-frame">
+                <img class = "image-icon"src="{% static 'images/succesregistration.png' %}" alt="">
+                <form method = "post">
+                    {% csrf_token %}
+                    <div class = "frame-succes">
+                        <h1 class = 'h1'>Вітаємо! <br>Ви успішно зареєструвалися!</h1>
+                    </div>
+
+                    <button class="under-button-frame" type="submit">Авторизація</button>
+                </form>
+            </div>
+        </div>
+        <div class = "contacts" style="padding-top: 51px">
+            <div class = "allIcons">
+                <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
+                <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">
+                <img class = "imageCall" src="{% static 'images/callIcon.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+{% endblock %}

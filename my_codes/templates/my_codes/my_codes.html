@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block link %}
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'my_codes_app/my_codes.css' %}">
+{% endblock %}
+
+{% block title %}
+    Мої QR-коди
+{% endblock %}
+
+{% block content %}
+<script src="{% static 'js/my_codes.js'%}" defer></script>
+    <div class="Screen">
+        <div class="hat">
+            <h1 class="h1Generate">Мої <span class="spanQR">QR</span>-коди</h1>
+            <div class="urls">
+
+                <div class="mainUrl">
+                    <a href="{% url 'home_app' %}" class="mainPage">Головна</a>
+                </div>
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'my_codes' %}" class="MyQRCodesPage" >Мої QR-коди</a>
+                    <a href="{% url 'logout' %}" class="logout-button">Вийти з акаунту</a>
+                {% else %}
+                    <a href="/codes/my_codes/" class="MyQRCodesPage" >Мої QR-коди</a>    
+                    <a href="{% url 'registration1' %}" class="registrationPage">Реєстрація</a>
+                    <a href="{% url 'authorithation1' %}"class="authorizationPage">Авторизація</a>
+                {% endif %}
+                <h1 class="user-h1">{{request.user.username}}</h1>
+            </div>
+        </div>
+            <div class = "flex-wraper">
+                <div class="codes">
+                {% if specific_qrcode %}
+                        {% if specific_qrcode.is_working == True %}
+                            <div class = "bg"></div>
+                            <div class="form-qr">
+                                <div class="qr-objects">
+                                    <img src="{% static 'images/close.png'%}" class = "close-button" alt="">
+                                    <h1 class="specific-title">Назва: {{specific_qrcode.name}}</h1>
+                                    <h2 class="specific-url"><span class = "h1-url">Посилання: </span> {{specific_qrcode.url}}</h2>
+                                    <h2 class="specific-date-created">Дата створення: {{specific_qrcode.date_created}}</h2>
+                                    <h2 class="specific-date-expired">Дата видалення: {{date_expired}}</h2>
+                                    <img class="specific-image" src="/media/{{specific_qrcode.image}}" alt=""> 
+                                </div>
+                            </div>
+                        {% else %}
+                        <div class = "bg"></div>
+                        <div class="form-qr error-form">
+                            <img src="{% static 'images/close.png'%}" class = "close-button for-error" alt="">
+                            <div class="qr-objects">
+                                <h1 class = "error-specific-text">Цей qr-код не працює! <br>Поповніть або повисіть підписку!</h1>
+                            </div>
+                        </div>
+                        {% endif %}
+                {% endif %}
+                
+                {% if delete %}
+                        <form class="bg-form" method="post">
+                            {% csrf_token %}
+                            <div class="bg-form">
+                                <div class="form-confirmed">
+                                    <h1 class="h1-confirmed">Ви дійсно хочете видалити<br> цей QR-код?</h1>
+                                    <button type="submit" class="confirm-delete">Так</button>
+                                    <input type="text" name="form-delete" hidden>
+                                </div>
+                            </div>
+                        </form>
+                    {% endif %}
+
+                    {% for user in User %}
+                        {% if user.id == current_user.id %}
+                            {% for qrcode in QR_Codes %}
+                                {% if user.id == qrcode.user_id %}
+                                        <div class="bg-qr-сode">
+                                            {% if qrcode.is_working %}
+                                                <div class="qr-code">
+                                                    <form method="post" class="form1">
+                                                        {% csrf_token %}
+                                                        <img src="/media/{{qrcode.image}}" alt="" class="qr-code-img">
+                                                        <button class="qr-code-title" type="submit" id="{{qrcode.id}}">{{qrcode.name}}</button>
+                                                        <h2 class="qr-code-date"><span>Дата створення: <br> </span>{{qrcode.date_created}}</h2>
+                                                        <input type="text" name = "specific_qr" hidden value="11">
+                                                    </form>
+                                                    <form method="post" class="form2">
+                                                        {% csrf_token %}
+                                                        <div class="buttons-download-delete">
+                                                            <a class="qr-code-button" type="submit" href="/media/qr_codes/{{user.username}}/{{qrcode.name}}.png" download="{{qrcode.name}}.png">Скачати</a>
+                                                            <button class="button-delete" id="{{qrcode.id}}">
+                                                                <img class="bin-image" src="{% static 'images/bin.png' %}" alt="">
+                                                            </button>
+                                                            <input type="hidden" name="button-delete">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            {% else %}
+                                                <div class="qr-code">
+                                                    <form method="post" class="form1">
+                                                        {% csrf_token %}
+                                                        <img src="/media/{{qrcode.image}}" alt="" class="qr-code-img doesnt-work">
+                                                        <div class = "error-name">
+                                                            <img src="{% static 'images/icon_error.png'%}" class = "error-image"alt="">
+                                                            <button class="qr-code-title error-button" type="submit" id="{{qrcode.id}}">{{qrcode.name}}</button>
+                                                            
+                                                        </div>
+                                                        <h2 class="qr-code-date"><span>Дата створення: <br> </span>{{qrcode.date_created}}</h2>
+                                                        <input type="text" name = "specific_qr" hidden value="11">
+                                                    </form>
+                                                    <form method="post" class="form2">
+                                                        {% csrf_token %}
+                                                        <div class="buttons-download-delete">
+                                                            <a class="qr-code-button" type="submit" href="/media/qr_codes/{{user.username}}/{{qrcode.name}}.png" download="{{qrcode.name}}.png">Скачати</a>
+                                                            <button class="button-delete" id="{{qrcode.id}}">
+                                                                <img class="bin-image" src="{% static 'images/bin.png' %}" alt="">
+                                                            </button>
+                                                            <input type="hidden" name="button-delete">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        <div class="contacts" style="padding-top: 29px;">
+            <div class="allIcons">
+                <img class="imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
+                <img class="imageViber" src="{% static 'images/viberIcon.png' %}" alt="">
+                <img class="imageCall" src="{% static 'images/callIcon.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/my_codes.js'%}"></script>
+{% endblock %}

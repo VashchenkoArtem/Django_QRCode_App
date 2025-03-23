@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block link %}
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'authorithation2/authorithation2.css' %}">
+{% endblock %}
+{% block content %}
+    <div class = "Screen">
+        <div class = "hat"; style="height: 136px; gap:233px">
+            <h1 class = "h1Generate">Авторизація</h1>
+            <div class = "urls">
+                <div class = "mainUrl">
+                    <a href = "{% url 'home_app' %}" class = "mainPage">Головна</a>
+                </div>
+
+                <a href="{% url 'my_codes' %}" class = "codes">Мої QR-коди</a>
+                <a href="{% url 'registration1' %}" class = "registration">Реєстрація</a>
+                <a href="{% url 'authorithation1' %}"class = "MyQRCodesPage">Авторизація</a>
+            </div>
+        </div>
+        <div class="authorithation-form">
+            <div class="authorithation-frame">
+                <div class="emailImgFrame">
+                    <img class="emailImg" src="{% static 'images/emailicon.png' %}" alt="">
+                </div>
+                <h1 class="info-text">На вашу пошту надійшло повідомлення! <br>Будь ласка введіть код для підтвердження</h1>
+                <form method = "post" class = "frame">
+                    {% csrf_token %}
+                    <div class="email-form-frame">
+                        <label class="text-name">Код з пошти</label>
+                        <input class="name-form" type="text" required minlength="6" maxlength="6" name="email_code">
+                        <h5 class="under-name">Наприклад: 123456</h5>
+                    </div>
+                    <h1 class = "error">{{error}}</h1>
+                    <button class="under-button-frame" type="submit">Ввійти в акаунт</button>
+                </form>
+            </div>
+        </div>
+        <div class = "contacts"  style="padding-top: 51px;">
+            <div class = "allIcons">
+                <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
+                <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">
+                <img class = "imageCall" src="{% static 'images/callIcon.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+{% endblock %}

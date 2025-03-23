@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Згенерувати код
+{% endblock %}
+{% block link %}
+    
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'qrgenerate_app/generate.css' %}">
+{% endblock %}
+{% block content%}
+    <div class = "screen">
+            <div class = "hat">
+                <h1 class = "h1Generate">Генерація <span class = "spanQR"> QR</span>-кода</h1>
+                <div class = "urls">
+
+                    <div class = "mainUrl">
+                        <a href = "{% url 'home_app' %}" class = "mainPage">Головна</a>
+                    </div>
+                    {% if request.user.is_authenticated %}
+
+                        <a href="{% url 'my_codes' %}" class = "MyQRCodesPage" >Мої QR-коди</a>
+                        <a href = "{% url 'logout' %}"class = "logout-button">Вийти з акаунту</a>
+    
+                    {% else %}
+                        <a href="/codes/my_codes/" class = "MyQRCodesPage" >Мої QR-коди</a>    
+                        <a href="{% url 'registration1' %}" class = "registrationPage">Реєстрація</a>
+                        <a href="{% url 'authorithation1' %}"class = "authorizationPage">Авторизація</a>
+                        
+                    {% endif %}
+                    <h1 class = "user-h1">{{request.user.username}}</h1>
+                </div>
+            </div>
+            {% if error %}
+                <div class="form-qr">
+                    <div class="qr-objects">
+                        <img src="{% static 'images/close.png'%}" class = "close-button" alt="">
+                        <h1 class = "error">{{error}}</h1>
+                    </div>
+                </div>
+            {% endif%}
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="main-form">
+                    <div class="form">
+                        {% if error %}
+                            <div class="form-form"> 
+                                <label class="qr-name">Назва QR-кода</label>
+                                <input class="qr-name-example" type ="text" name = "name" required>
+                                <h5 class="qr-under">Наприклад: Figma QR</h5>
+                            </div>
+                        {% else %}
+                            <div class="form-form1"> 
+                                <label class="qr-name">Назва QR-кода</label>
+                                <input class="qr-name-example" type ="text" name = "name" required>
+                                <h5 class="qr-under">Наприклад: Figma QR</h5>
+                            </div>
+                        {% endif%}
+                        <div class="url-form">
+                                <label class="url">Посилання</label>
+                                <input class="url-example" type ="text" name = "url" required>
+                                <h5 class="url-example-text">Наприклад: https://www.figma.com/</h5>
+                        </div>
+                        <div class="colors">
+                            <div class="colorbg-form">
+                                <label class="colorbg-name">Колір фону</label>
+                                <input type= "color" name = "colorbg" class="colorbg-input" value="#ffffff">
+                            </div>
+                            <div class = "colorqr-form">
+                                <label class="colorqr-name">Колір QR-Кода</label>
+                                <input type="color"name = "colorqr" class="colorqr-input" value = "black">
+                            </div>
+                        </div>
+                        <div class="image-form">
+                            <label class="image-label">Зображення в QR-Коді</label>
+                            <input type = "file" class = "image-input" name = "image" accept = "image/*">
+                        </div>
+                        <div class="figure-form">
+                            <label class="figure-label">Форма пікселів</label>
+                            <select name="figure" class = "figure-select">
+                                <option value="default">Звичайні</option>
+                                <option value="square">Квадратні</option>
+                                <option value="circle">Круглі</option>
+                                <option value="vertical-line">У вигляді вертикальних ліній</option>
+                                <option value="horizontal-line">У вигляді горизонтальних ліній</option>
+                                <option value="rounded">Скруглені кути</option>
+                            </select>
+                        </div>
+                        {% if error %}
+                            <h1 class = "error">{{error}}</h1>
+                        {% endif%}
+                        <div class="cr-qr-form">    
+                                <button class="create-qr" type="submit" >Створити QR</button>
+                        </div>
+                    </div>
+                    {% if qr_code.image  %}
+                        <img class= "qr-code" src="{{ qr_code.image.url}}" alt="">
+                    {% else %}
+                        <div class="qr-code"></div>
+                    {% endif %}    
+                        
+                </div>
+            </form>
+            <div class = "contacts" style="    padding-top:24px;">
+                <div class = "allIcons">
+                    <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
+                    <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">
+                    <img class = "imageCall" src="{% static 'images/callIcon.png' %}" alt="">
+                </div>
+            </div>
+    </div>
+    <script src = "{% static 'subscribe/js/subscribe.js'%}"></script>
+{% endblock %}

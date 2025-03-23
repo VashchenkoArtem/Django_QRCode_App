@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block link %}
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'home_app/home.css' %}">
+{% endblock %}
+
+{% block title%}
+Головна сторінка
+{% endblock %}
+{% block content %}
+    <div class =  "Screen">
+
+        <div class = "hat"; style="flex-wrap: nowrap;">
+            <h1 class = "h1Generate">Генератор <span class = "spanQR">QR</span>-кодів</h1>
+            <div class = "urls">
+                <div class = "mainUrl">
+                    <a href = "" class = "mainPage">Головна</a>
+                </div>
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'my_codes' %}" class = "MyQRCodesPage" >Мої QR-коди</a>
+                    <a href = "{% url 'logout' %}"class = "logout-button">Вийти з акаунту</a>
+                {% else %}
+                    <a href="/codes/my_codes/" class = "MyQRCodesPage" >Мої QR-коди</a>
+                    <a href="/registration/informationabout/" class = "registrationPage">Реєстрація</a>
+                    <a href="/authorithation/logininformation/"class = "authorizationPage">Авторизація</a>
+
+                {% endif %}
+                <h1 class = "user-h1">{{request.user.username}}</h1>
+            </div>
+        </div>
+
+        <div class = "subscribe">
+            <div class = "subscribeFree">
+                <a class = "freeButton" href="{% url 'subscribe' %}">
+                    <h1 class = "buttonFree" >Free</h1>
+                </a>
+
+                <h1 class = "descritpionFree">Безкоштовно Один QR-код на 6 місяців</h1>
+            </div>
+            <div class = "lineBetweenFreeAndStandart"></div>
+            
+            <div class = "subscribeStandart">
+                <a  class = "buttonStandart"href="{% url 'subscribe' %}">
+                    <h1 class = "h1Standart">Standart</h1>
+                </a>
+
+                <h1 class = "descriptionStandart">2$ на місяць 10 кастомізованих <br>QR-кодів</h1>
+            </div>
+
+            <div class = "lineBetweenStandartAndPro"></div>
+
+            <div class = "subscribePro">
+                <a class = "proButton" href="{% url 'subscribe' %}">
+                    <h1 class = "h1Pro">Pro</h1>    
+                </a>
+                
+                <h1 class = "descriptionPro">10$ на місяць До 100 <br>QR-кодів</h1>
+            </div>
+            <div class = "secondRow">
+                <div class="subscribeDesktop">
+                    <a href="{% url 'subscribe' %}" class="desktopButton">
+                        <h1 class="h1Desktop">Desktop</h1>
+                    </a>
+
+                    <h1 class="descriptionDesktop"><ul>
+                        <li>5 QR-кодів</li>
+                        <li>10 QR-кодів</li>
+                        <li>20 QR-кодів</li>
+                    </ul>
+                </h1>
+
+                </div>
+                <div class = "lineAfterDesktop"></div>
+                <div class = "generateButton">
+                    <div class = "bgGenerateButton">
+                        <a href = "/codes/qrgenerate/" class = "h1GenerateButton">Згенерувати QR-код</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class = "contacts">
+            <div class = "allIcons">
+                <a href="{% url 'contacts' %}">
+                    <img class = "imageTelegram" src="{% static 'images/telegramIcon.png' %}" alt="">
+                </a>
+                <a href="{% url 'contacts' %}">
+                    <img class = "imageViber" src="{% static 'images/viberIcon.png' %}" alt="">
+                </a>
+                <a href="{% url 'contacts' %}">
+                    <img class = "imageCall" src="{% static 'images/callIcon.png' %}" alt="">
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="{% static 'js/home.js'%}"></script>
+{% endblock %}
