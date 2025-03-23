@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 
 <h1 align = "center">Генератор QR-кодів/QR-Code generator</h1>
 
 
 # Генератор QR-кодів/QR-Code generator
-=======
-<h1 align = "center">Генератор QR-кодів/QR-Code generator</h1>
-
->>>>>>> 50ffef3302eb6bf995700693c2fd8a0285767f6a
 ---
 ## Генератор QR-кодів - проєкт, який був створений для створювання кастомізованих QR-кодів, які користувач зберігає на сайті
 QR Code Generator is a project that was created to create customized QR codes that the user saves on the site.
@@ -45,6 +40,15 @@ QR Code Generator is a project that was created to create customized QR codes th
 Нашою **ціллю** було **створення зручного генераторат QR-кодів**, де людина може **обрати** будь-яку **кастомізацію**
 
 ## Над цим проєктом працювали \ They worked on the project:
+=======
+## Над цим проєктом працювали/They worked on the project:
+
+**Ващенко Артем(TeamLead)**: https://github.com/VashchenkoArtem
+
+**Кирило Харлан**: https://github.com/KirillKharlan
+
+**Марков Дмитро**: https://github.com/DmitriyM08
+
 **Архіп Гончар**: https://github.com/Arhip-ops
 
 ## Посилання на figma дизайн \ Link on figma design file: 
@@ -334,8 +338,4 @@ path("Adress1/", include("<path_to_urls.py>"))
 Я вдячен всім, хто працював зі мною над цим проєктом. Це був неймовірний проєкт та ми впевнені, що досвід який ми отримали обов'якзково знадобиться нам в дальнішомих проєктах!
 # Conclusion
 This project turned out to be very difficult for us because we had **never worked** with the **Django framework** before. We **studied** its **functions**, **methods**, **classes**, how to **create** projects, how to **display** pages, and so on. Also, during **the implementation** of this project, we **learned** about **relationships** in the **Database**. For example: **One-To-One**, **One-To-Many**, **Many-To-Many**. They turned out to be **very convenient** for us. We **first** **created a Figma design** for the project, using **autolayout** and **components**. Also, we had **FigJam diagrams**, which **depicted the principle of the DB in the project**. Also, for the **first time** we **built** a **project based on a template** that we **created** in **Figma** (Website building is the process of creating a web page from a pre-created site design layout, previously drawn using graphic editors). In addition, we also **worked with qr-codes** for the **first time**, at first not even knowing which library to use. We learned about the **qrcode** library, which **generates qr-codes** and **used** it in the project. In addition, our project used **subscriptions**, which we also **hadn't done before**. We created a **Database**, where **the user's subscription** and **information** about it are stored. It is understandable that during the project we **had difficulties**. For example, with **qr-codes**: the **qrcode** library created a qr-code image **in the wrong format** that we store in **static**. Therefore, we had to **convert** it into the **necessary** format ourselves. Another unpleasant problem with the format is **setting the color of the qr code**. In our project, the **color** of the qr code is set via **RadialGradiantColorMask**, which has 3 parameters: back_color, edge_color and center_color. All of them **responsible** for the **color** of the qr code that the user entered on the site. However, the format that is **necessary** for setting the color via **RadialGradiantColorMask** and the format of the colors that we receive from **the site** are **different**. Therefore, we **created the hex_to_rgb** function to **convert colors into the required format**.
-<<<<<<< HEAD
 I am grateful to everyone who worked with me on this project. It was an incredible project and we are sure that the experience we gained will definitely be useful to us in future projects!
-=======
-I am grateful to everyone who worked with me on this project. It was an incredible project and we are sure that the experience we gained will definitely be useful to us in future projects!
->>>>>>> 50ffef3302eb6bf995700693c2fd8a0285767f6a
